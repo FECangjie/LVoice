@@ -51,7 +51,7 @@ module.exports = {
 			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015']}},
 			{ test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
 			// { test: /(\.html|\.php)$/, loader: "raw-loader" },
-			{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=images/[name].[ext]' },
+			{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=./images/[name].[ext]' },
 			{ test: /\.html$/, loader: "html-loader?attrs=img:src img:data-src" }
 		]
 	},

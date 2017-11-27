@@ -1,18 +1,16 @@
 
-# 北京 众诚公益 前端代码
+# 家音 前端代码
 
 * [构建工具 webpack]
 * ES2015
 
 ## 使用
 
-git clone git@github.com:FECangjie/bjzcgy.git
-
 1. 安装 依赖 `npm install`
 
 2. webpack 打包构建   `webpack`
 
-3. npm 开发 `npm run dev`
+3. npm 开发 `npm start`
    上线：`npm run build`
 
 ## 结构

@@ -30,8 +30,7 @@ $(function () {
 			}
     })
 
-	async function init() { //
-		$('.body').attr('style', 'background: url(../dist/images/bg.png) repeat-y fixed;')
+	async function init() { // 获取初始数据
 		Data = await fetch("/data.json", {
 			method:'get',
 			body: {
@@ -40,7 +39,7 @@ $(function () {
 			}
 		})
 		setSwiper(Data)
-		setHtml(Data, 'huodong', 1)
+		$('.content').append('<i>'+Data.list[0]+'</i>')
 	}
 	init()
 
@@ -53,7 +52,7 @@ $(function () {
 	 * @param {[type]} type [description]
 	 */
 	function setSwiper(data) {
-		var swipers = data.swiper
+		var swipers = []
 		var $swiper = $(".swiper-wrapper")
 		var txt = ''
 		for (var i = 0; i < swipers.length; i++) {
@@ -73,37 +72,6 @@ $(function () {
 	 * @param {[type]} type [description]
 	 */
 	function setHtml(data, type, page) {
-		var page = + page
-		var notice = data.notice[type]
-		var $noticeHtml = $('[data-mark="notice"]');
-		var listHtml = ''
-		var paginationHtml = ''
-		var temp = []
-
-		// 计算分页
-		var len = notice.length > page * 6 ? page * 6 : notice.length
-		for (var i = (page - 1) * 6; i < len; i++) {
-			temp = location.pathname.split('/')
-			temp[temp.length-1] = notice[i].href
-			listHtml += '<div class="list" onClick="location.href=\'' + temp.join('/') +'#bg\'">'
-			listHtml += '<img class="pic" src="'+notice[i].img+'" alt="">'
-			listHtml += '<span>'+notice[i].content+'</span>'
-			listHtml += '<i>'
-			if (notice[i].isNew) {
-				listHtml += '<img src="../dist/images/new.png" alt="">'
-			}
-			listHtml += notice[i].date + '</i>'
-			listHtml += '</div>'
-		}
-
-		// 加载按钮
-		paginationHtml += '<div class="pagination">'
-		paginationHtml += (page !== 1) ? '<button data-act="pagination" data-value="up" data-num="'+page+'" data-type="'+type+'" class="btn-up">上一页</button>' : ''
-		paginationHtml += (notice.length > page * 6) ? '<button data-act="pagination" data-value="down" data-num="'+page+'" data-type="'+type+'" class="btn-down">下一页</button>' : ''
-		paginationHtml += '</div>'
-
-		$noticeHtml.html(listHtml)
-		$noticeHtml.append(paginationHtml)
 
 		if ($("#loading")[0]) {
 			console.log($("#loading"))
@@ -112,19 +80,11 @@ $(function () {
 	}
 
 
-
-
-
-
-		// setHtml(Data.data, 'huodong', 1)
-
 		/**
 		 * 初始化tab
 		 * @return {[type]} [description]
 		 */
 		function initTab() {
-			var tab = $('[class="actived"]')
-			tab.attr('class','')
 		}
 
 
@@ -134,10 +94,6 @@ $(function () {
 		 * @return {[type]}      [description]
 		 */
 		var tabHandle = function (data) {
-			var el = $(data.el)
-			initTab()
-			el.attr('class','actived')
-			setHtml(Data, el.attr('data-value'), 1)
 		}
 
 		/**
@@ -146,9 +102,6 @@ $(function () {
 		 * @return {[type]}      [description]
 		 */
 		var paginationHandle = function (data) {
-			var el = $(data.el)
-			var num = el.attr('data-value') === 'up' ? + el.attr('data-num') - 1 : + el.attr('data-num') + 1
-			setHtml(Data, el.attr('data-type'), num)
 		}
 
 		/**
@@ -171,7 +124,7 @@ $(function () {
 	 		}
 		}
 
-
+// 添加事件
 		de.add('tab', 'click', tabHandle);
 		de.add('pagination', 'click', paginationHandle);
 })
