@@ -7,6 +7,8 @@ import tpl from './tpl.vtpl'
 import './style.less'
 import axios from 'axios'
 import store from 'store'
+import "../assets/styles/index.css"
+
 
 import header from 'components/header'
 import sidebar from 'components/header'
@@ -103,13 +105,13 @@ export default Vue.component('app', {
   },
   components: {
     'v-header': header,
-    'side-bar': sidebar,
-    'bottom-bar': bottombar,
-    'my-music': mymusic,
-    // 'menu-list': menulist,
-    'music-list': musiclist,
-    'music-detail': musicdetail,
-    'song-sheet': songsheet
+    // 'side-bar': sidebar,
+    // 'bottom-bar': bottombar,
+    // 'my-music': mymusic,
+    // // 'menu-list': menulist,
+    // 'music-list': musiclist,
+    // 'music-detail': musicdetail,
+    // 'song-sheet': songsheet
   },
   created () {
     let LocalAPI = '/data.json'

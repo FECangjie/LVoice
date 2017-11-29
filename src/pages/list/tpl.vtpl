@@ -1,7 +1,9 @@
-<div class="mymusic">
-	<type-list name="我的音乐" iconinfo="icon-music" count="28" :playing="true"></type-list>
-	<type-list name="最近播放" iconinfo="icon-zuijinplay" count="18"></type-list>
-	<type-list name="我的电台" iconinfo="icon-diantai" count="1"></type-list>
-	<type-list name="我的收藏" iconinfo="icon-collect" count="3" :has-border="false"></type-list>
-	
+<div class="findsheetlist" :style="{width:listwidth,padding:listpadding}" >
+	<div class="content">
+		<!-- <img class="image" :src="imagesrc" alt=""> -->
+		<div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
+		<span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{formartTopRight}}</span>
+		<span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
+	</div>
+	<div class="title" v-if="showbottomtitle">{{bottomtitle}}</div>
 </div>

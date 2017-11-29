@@ -1,0 +1,74 @@
+.findsheetlist {
+  display:inline-block;
+  width:100%;
+  box-sizing:border-box;
+  height:auto;
+  position:relative;
+  vertical-align:top;
+  .content {
+    width:100%;
+    height:auto;
+    position:relative;
+    .image {
+      width:100%;
+      height:0;
+      padding-top:100%;
+    }
+
+    .toprighttips {
+      height:18px;
+      line-height:18px;
+      display:block;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      color:#fff;
+      font-size:12px;
+      font-weight:400;
+      text-align:right;
+      padding:0 4px;
+      .icon {
+        margin-right:3px;
+
+      }
+    }
+
+    .bottomtips {
+      font-size:12px;
+      font-weight:400;
+      padding:0 6px;
+      color:#fff;
+      height:22px;
+      line-height:22px;
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      overflow: hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;
+      background-image:-webkit-linear-gradient(to top, rgba(22,22,22,0.2),rgba(255,255,255,0));
+      background-image:linear-gradient(to top, rgba(22,22,22,0.2),rgba(255,255,255,0));
+    }
+
+  }
+
+  .title {
+    width: 100%;
+    height:34px;
+    line-height:17px;
+    margin:4px 0;
+    padding:0 3px;
+    box-sizing:border-box;
+    overflow: hidden;
+    color:#333;
+    font-weight:400;
+    text-overflow: ellipsis;
+    font-size:12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+}

@@ -10,24 +10,47 @@ import typelist from '../typelist'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('list', {
-  data () {
-    return {
-      isLoading: true,
-      errorTip: '',
-      type: ''
+  props: {
+    listpadding: {
+      type: String,
+      default: '0'
+    },
+    imagesrc: {
+      type: String
+    },
+    showtoprighttips: {
+      type: Boolean,
+      default: true
+    },
+    toprighticonclass: {
+      type: String
+    },
+    toprighttitle: {
+      type: String
+    },
+    showbottomtips: {
+      type: Boolean,
+      default: true
+    },
+    bottomtips: {
+      type: String
+    },
+    showbottomtitle: {
+      type: Boolean,
+      default: true
+    },
+    bottomtitle: {
+      type: String
+    },
+    listwidth: {
+      type: String
     }
   },
   computed: {
-    items () {
-      return this.$store.getters.getMusicAllList.sheets
+    formartTopRight () {
+      const numberInfo = Number(this.toprighttitle)
+      return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
     }
-  },
-  components: { // 子组件
-    'type-list': typelist,
-    // musicsheet,
-    // 'menu-list': menulist
-  },
-  created () {
   },
   template: tpl
 })

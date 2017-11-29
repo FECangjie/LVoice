@@ -4,8 +4,7 @@
  */
 import Vue from 'vue'
 import './style.less'
-import findrecommend from './findrecommend'
-	// import findsheet from '../findsheet/findsheet.vue'
+import recommend from './findrecommend'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('home', {
@@ -23,8 +22,7 @@ export default Vue.component('home', {
   },
   components: { // 子组件
     components: {
-			findrecommend: findrecommend,
-			// findsheet: findsheet
+			recommend: recommend,
 		}
   },
   created () {

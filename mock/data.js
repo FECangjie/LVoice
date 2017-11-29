@@ -2999,7 +2999,7 @@ module.exports = function (path, param, context) {
     	"reconmmend":{
     		"recommendImageList": [{
 						    		"src": "/static/images/swiper/taylor swift.jpg",
-						    		"type": "首发",
+						    		"type": "最热",
 						    		"color": "#E93D3D",
 						    		"songList":[{
 													"id": "45",
@@ -3013,7 +3013,7 @@ module.exports = function (path, param, context) {
 						    	},
 						    	{
 						    		"src": "/static/images/swiper/linjunjie.jpg",
-						    		"type": "华语",
+						    		"type": "最热",
 						    		"color": "#48A787",
 						    		"songList": [{
 					    							"id": "109",
@@ -3027,7 +3027,7 @@ module.exports = function (path, param, context) {
 						    	},
 						    	{
 						    		"src": "/static/images/swiper/owl city.jpg",
-						    		"type": "欧美",
+						    		"type": "最热",
 						    		"color": "#5994C5",
 						    		"songList": [{
 													"id": "61",
@@ -3055,7 +3055,7 @@ module.exports = function (path, param, context) {
 						    	},
 						    	{
 						    		"src": "/static/images/swiper/alan walker.jpg",
-						    		"type": "电音",
+						    		"type": "最新",
 						    		"color": "#DDA15F",
 		    						"songList": [{
 													"id": "3",

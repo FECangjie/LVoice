@@ -1,12 +1,1 @@
-.red-tooltip {
-    	color: #FF4949 !important;
-    	border-color: #FF4949 !important;
-    	.popper__arrow {
-	    	color: #FF4949 !important;
-    		border-color: #FF4949 !important;
-    	}
-    	div {
-
-    	}
-
-    }
+@import "./font-icon/style.css"

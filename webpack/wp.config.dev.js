@@ -30,8 +30,9 @@ module.exports = {
 			'vue': 'vue/dist/vue.js',
 			common: path.resolve(ROOT, './src/common'),
 			components: path.resolve(ROOT, './src/components'),
-			'vue$': 'vue/dist/vue.esm.js',
-			'store': path.resolve(ROOT, './src/store')
+			'store': path.resolve(ROOT, './src/store'),
+			'pages': path.resolve(ROOT, './src/pages'),
+			'vue$': 'vue/dist/vue.esm.js'
 		}
 	},
 	devServer: { // webpack-dev-server配置
