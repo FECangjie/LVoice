@@ -1,0 +1,17 @@
+<div class="findmusic">
+		<div class="find-menu">
+			<router-link class="menu-list" tag="div" to="/findvoice/type">
+				<div class="menu-list-div">分类</div>
+			</router-link>
+			<router-link class="menu-list" tag="div" to="/findvoice/recommend">
+				<div class="menu-list-div">推荐</div>
+			</router-link>
+			<router-link class="menu-list" tag="div" to="/findvoice/nice">
+				<div class="menu-list-div">精品</div>
+			</router-link>
+			<router-link class="menu-list" tag="div" to="/findvoice/now">
+				<div class="menu-list-div">直播</div>
+			</router-link>
+		</div>
+		<router-view></router-view>
+	</div>

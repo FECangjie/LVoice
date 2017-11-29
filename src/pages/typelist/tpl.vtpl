@@ -1,0 +1,9 @@
+<div class="typelist" @click="alert1" :style="{background:typelistbg}">
+  <i class="info" :class="iconInfo"></i>
+  <div class="typelist-detail">
+    <span class="name">{{listName}}</span>
+    <span class="count" v-show="showCount">({{listCount}})</span>
+    <p v-if="showBorder" class="border-1px"></p>
+    <i v-if="isPlaying" class="isPlaying icon-volume-medium"></i>
+  </div>
+</div>

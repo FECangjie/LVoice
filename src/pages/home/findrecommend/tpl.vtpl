@@ -1,0 +1,20 @@
+<div class="findrecommend" v-if="reconmmend && reconmmend.findmusic">
+
+	<div class="recommend-type">
+		<div class="div-type">
+			<i class="icon-type icon-fm"></i>
+			<p class="title">私人FM</p>
+		</div>
+		<div class="div-type">
+			<i class="icon-type icon-date"></i>
+			<p class="title">每日听歌推荐</p>
+		</div>
+		<div class="div-type">
+			<i class="icon-type icon-rank-list"></i>
+			<p class="title">云音乐热歌榜</p>
+		</div>
+	</div>
+	<div class="recommend-list">
+
+	</div>
+</div>

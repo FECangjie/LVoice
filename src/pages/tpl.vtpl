@@ -1,0 +1,4 @@
+<div id="app">
+    <!-- <Com-header></Com-header> -->
+    <router-view></router-view>
+</div>

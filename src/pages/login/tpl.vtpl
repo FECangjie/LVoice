@@ -1,0 +1,6 @@
+<div class="login">
+  <div style="padding: 40px;">
+    <span>欢迎：{{ uc_id }}</span>
+  </div>
+  <mt-button type="primary" class="button" @click="login" :loading="loading">{{btuText}}</mt-button>
+</div>

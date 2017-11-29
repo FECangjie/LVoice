@@ -1,0 +1,68 @@
+<div class="iw-chat">
+  <div class="header">
+    <!-- <span class="demonstration">{{ title }}</span> -->
+      <el-carousel trigger="click" height="225px">
+        <el-carousel-item v-for="item in 4" :key="item">
+          <!-- <h3>{{ title[item-1] }}</h3> -->
+          <img :src="imgUrls[item-1]" style="width: 100%;height: 100%;">
+        </el-carousel-item>
+      </el-carousel>
+  </div>
+  <div class="content">
+    <div class="person">
+      <span class="img">
+        <img :src="imgUrl">
+      </span>
+      {{ name }}
+      <span class="btns">
+        <el-button type="info" class="button" @click="onMusic">虾听听</el-button>
+
+        <el-button type="info" class="button" @click="onSuggest">反馈</el-button>
+        <el-button type="info" class="button" @click="onSet">设置</el-button>
+        <el-button type="info" class="button" @click="onCreate">创建房间</el-button>
+      </span>
+    </div>
+    <div class="rooms">
+      <el-row :gutter="20">
+        <el-col :span="5" v-for="(o, index) in rooms" :key="o" :offset="index > 0 ? 1 : 0">
+          <el-card :body-style="{ padding: '0px' }">
+            <div style="padding: 14px;">
+              <h4>{{index === 0 ? '进' : index === 1 ? '『﹎·●﹏葬爱_」┌家族' : index === 2 ? '零零落落。' : '山山水水'}}</h4>
+              <div class="content">
+              <p>{{index === 0 ? 'ca..' : index === 1 ? '︶￣回憶 是首只唱給悲傷著聽的歌﹏ 。' : index === 2 ? 'xixixi' : '啊啊啊啊'}}</p>
+              <p>{{index === 0 ? '？？？' : index === 1 ? '我願是一只撲火的飛蛾' : index === 2 ? '恭喜' : '叫爸爸'}}</p>
+              </div>
+              <div class="bottom clearfix">
+                <time class="time">{{ currentDate }}</time>
+                <el-button type="text" class="button">进入</el-button>
+              </div>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
+  </div>
+
+  <div class="audio">
+  	<audio id="audio" controls="" autoplay="" name="media" v-bind:src="musicUrl"></audio>
+  </div>
+
+  <el-dialog class="create"  :title=createTitle :value="dialogFormVisible" :visible="dialogFormVisible">
+  <el-form ref="form" :model="form" :label-width="formLabelWidth">
+      <el-form-item label="房间类型" >
+         <el-radio-group v-model="form.radio" size="large">
+              <el-radio-button label="8人"></el-radio-button>
+              <el-radio-button label="12人"></el-radio-button>
+              <el-radio-button label="20人"></el-radio-button>
+            </el-radio-group>
+      </el-form-item>
+    <el-form-item label="房间名称" >
+    <el-input v-model="form.name" style="width:70%;margin-left:10px"></el-input>
+  </el-form-item>
+  </el-form>
+  <div slot="footer" class="dialog-footer">
+    <el-button @click="dialogFormVisible = false">取 消</el-button>
+    <el-button type="primary" @click="onCreateSubmit">确 定</el-button>
+  </div>
+</el-dialog>
+</div>

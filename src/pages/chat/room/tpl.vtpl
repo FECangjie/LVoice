@@ -1,0 +1,26 @@
+<div class="iw-chat">
+  <div class="content">
+    <div class="person">
+      <span class="img">
+        <img :src="imgUrl">
+      </span>
+      {{ name }}
+      <span class="btns">
+        <el-button type="info" class="button" >反馈</el-button>
+        <el-button type="info" class="button">设置</el-button>
+        <el-button type="info" class="button" @click="onLive">离开房间</el-button>
+      </span>
+    </div>
+    <el-form class="form" :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+      <el-form-item>
+        <h3>房间创建成功！</h3>
+        <el-form-item label-position=right   v-for="site in sites" :key="index" >
+        {{ name }}:{{site}}
+            </el-form-item>
+        <el-input style="width:80%" v-model="formLabelAlign.name" placeholder="请输入内容"></el-input>
+        <el-button type="info" class="button" @click="onSubmit">发送</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+
+</div>
