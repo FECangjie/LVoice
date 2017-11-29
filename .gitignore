@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+npm-debug.log
+asset/*
+dist
+.idea/*
+
+#构建
