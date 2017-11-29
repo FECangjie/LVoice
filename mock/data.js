@@ -1,10 +1,10 @@
 module.exports = function (path, param, context) {
   var result = {
     "user": {
-        "name": "未曾遗忘的青春",
-        "avatar": "/static/images/userlogo.jpg",
+        "name": "音频资源",
+        "avatar": "",
         "grade": "9",
-        "bg": "http://www.daiwei.org/index/images/img/indeximg.jpg"
+        "bg": ""
     },
     "music": {
     	"all":[

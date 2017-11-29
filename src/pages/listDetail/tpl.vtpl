@@ -1,4 +1,4 @@
-<div class="findsheetlist" :style="{}" >
+<div class="findsheetlist" :style="{width:listwidth,padding:listpadding}" >
 	<div class="content">
 		<!-- <img class="image" :src="imagesrc" alt=""> -->
 		<div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
