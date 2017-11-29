@@ -1,67 +1,76 @@
 var path = require('path')
 var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var map = require('./map')
-var ROOT = path.resolve(__dirname)
-var ENV = process.env.ENV
-var CDN = process.env.CDN
-
-var entry = {
-	// 'images': '/src/images/*'
-},
-	plugins = []
-
-for (chunk in map) {
-	entry[chunk] = map[chunk].src
-	plugins.push(new HtmlWebpackPlugin({
-		alwaysWriteToDisk: true,
-		filename: ROOT + '/pages/' + map[chunk].tpl,
-		template: ROOT + '/template/' + map[chunk].tpl,
-		chunks: [chunk]
-	}))
-}
-
-if (ENV == 'DEV') {
-	plugins.push(new HtmlWebpackHarddiskPlugin())
-} else {
-	// plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}))
-}
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
+var tpl = require.resolve('./vtpl-loader.js')
 
 module.exports = {
-	devtool: ENV == 'DEV' ? 'cheap-eval-source-map' : 'source-map',
-	entry: entry,
-	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: CDN ? CDN : '/dist'
-	},
-	resolve: {
-		alias: {
-			'src': path.resolve(__dirname,'src'),
-			'template': path.resolve(__dirname,'template'),
-			'pages': path.resolve(__dirname,'pages')
-		}
-	},
-	externals: {
-		'd3': 'window.d3'
-	},
-	module: {
-		loaders: [
-			{ test: /\.css/, loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' }) },
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015']}},
-			{ test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
-			// { test: /(\.html|\.php)$/, loader: "raw-loader" },
-			{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=images/[name].[ext]' },
-			{ test: /\.html$/, loader: "html-loader?attrs=img:src img:data-src" }
-		]
-	},
-	plugins: plugins.concat([
-		new webpack.DefinePlugin({
-			'ENV': JSON.stringify(process.env.ENV)
-		}),
-		// new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
-		new ExtractTextPlugin('[name].css')
-	])
+  // plugins: [commonsPlugin],
+    entry: './src/main.js', // 入口文件
+    output: {
+        path: path.resolve(__dirname, './dist'), // Webpack结果存储
+        publicPath: './dist/', // “publicPath”项则被许多Webpack的插件用于在生产模式和开发模式下下更新内嵌到css、html，img文件里的url值
+        filename: 'common.js'
+    },
+    module: {
+      loaders: [
+    { test: /\.vue$/, loader: 'vue-loader' },
+    { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015']}},
+    { test: /\.css$/, loader: 'style-loader!css-loader' },
+    { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+    { test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/, loader: 'file-loader' },
+    { test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/, loader: 'file-loader',
+      query: {
+        name: '[name].[ext]?[hash]'
+      }
+    },
+    { test: /\.vtpl$/, loader: tpl }
+  ]
+ },
+    resolve: {
+        extensions: ['.js', '.json', '.less'],
+        alias: {
+            'vue': 'vue/dist/vue.js', // 用 webpack 的别名功能把 vue/dist/vue.js 命名成了 vue，不然vue 的 package.json 中的 main 指向的是 dist/vue.common.js。
+            common: path.resolve(__dirname, './src/common'),
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    },
+    devServer: { // webpack-dev-server配置
+        historyApiFallback: true,//不跳转
+        noInfo: true,
+        inline: true //实时刷新
+    },
+    performance: {
+        hints: false
+    },
+    devtool: '#eval-source-map'
+  }
+
+if (process.env.NODE_ENV === 'production') { // 生产环境
+    module.exports.devtool = '#source-map'
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+          compressor: {
+            warnings: false,
+            // remove `console.*`
+            drop_console: true
+          },
+          output: {
+            comments: false
+          }
+        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: true,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        })
+    ])
 }

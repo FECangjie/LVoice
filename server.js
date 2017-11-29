@@ -5,6 +5,7 @@
  */
 var http = require('http')
 var path = require('path')
+var fs = require('fs')
 var express = require('express')
 var Webpack = require('webpack')
 var WebpackDevServer = require('webpack-dev-server')
@@ -26,10 +27,17 @@ var app = webApp.app
 // var app = express()
 app.use(api)
 
-//Express框架的路由访问控制文件server.js，增加路由配置。
-// app.use(function (req, res) {
-//   res.sendfile('./template/index.html')
-// })
+app.use(function (req, res) {
+  fs.readFile('./index.html', 'utf-8', (err, content) => {
+    if (err) {
+      console.log('We cannot open file.')
+    }
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8'
+    })
+    res.end(content)
+  })
+})
 
 app.listen(8080,
   function(err, result) {
