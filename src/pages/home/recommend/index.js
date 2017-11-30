@@ -1,5 +1,5 @@
 /**
- * @file: 首页
+ * @file: 推荐
  * @author: qinchao@lianjia.com
  */
 import Vue from 'vue'

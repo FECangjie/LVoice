@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 import homePage from './pages/home'
-import Recommend from './pages/home/findrecommend'
+import Recommend from './pages/home/recommend'
 import minePage from './pages/mine'
 import listPage from './pages/list'
 
@@ -15,17 +15,18 @@ export const router = new VueRouter({
   routes: [
   		{
           path:'/',
-          component: homePage
+          component: homePage,
+          redirect: '/lvoice/recommend'
       },
       {
-          path:'/findvoice',
+          path:'/lvoice',
           component: homePage,
           children: [{
             path: '',
-            redirect: '/findvoice/recommend'
+            redirect: '/lvoice/recommend'
             },
             {
-              path: '/findvoice/recommend',
+              path: '/lvoice/recommend',
               component: Recommend
           }]
       },

@@ -4,7 +4,7 @@
  */
 import Vue from 'vue'
 import './style.less'
-import recommend from './findrecommend'
+import recommend from './recommend'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('home', {

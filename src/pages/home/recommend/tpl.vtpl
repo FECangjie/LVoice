@@ -1,4 +1,4 @@
-<div class="findrecommend" v-if="reconmmend && reconmmend.findmusic">
+<div class="recommend" v-if="reconmmend && reconmmend.findmusic">
 	<mt-swipe :auto="4000" :options="swiperOption" ref="mySwiper">
 	  <mt-swipe-item  v-for="item in reconmmend.findmusic.reconmmend.recommendImageList" :key="item.id" :songlist="JSON.stringify(item.songList)">
 			<img class="image" :src="item.songList[0].img_url" alt="">

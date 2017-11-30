@@ -1,12 +1,11 @@
 {
-  "name": "bjzcgy",
+  "name": "lvoice",
   "version": "1.0.0",
-  "description": "公益项目 前端代码",
+  "description": "家音 前端代码",
   "author": "qinchao@lianjia.com",
   "license": "ISC",
   "scripts": {
     "node": "cross-env ENV=DEV node server.js",
-    "dev": "cross-env ENV=DEV webpack-dev-server --config wp.config.js --inline --hot --progress --content-base pages/",
     "open": "cross-env ENV=DEV webpack-dev-server --config wp.config.js --inline --hot --quiet --progress --content-base pages/ --host 127.0.0.1 --port 8080 --open ",
     "build": "cross-env ENV=PROD CDN='../dist/' webpack --config wp.config.js",
     "start": "npm run node"
