@@ -1,15 +1,15 @@
 <div class="findmusic">
 		<div class="find-menu">
-			<router-link class="menu-list" tag="div" to="/findvoice/type">
+			<router-link class="menu-list" tag="div" to="/lvoice/type">
 				<div class="menu-list-div">分类</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/findvoice/recommend">
+			<router-link class="menu-list" tag="div" to="/lvoice/recommend">
 				<div class="menu-list-div">推荐</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/findvoice/nice">
+			<router-link class="menu-list" tag="div" to="/lvoice/nice">
 				<div class="menu-list-div">精品</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/findvoice/now">
+			<router-link class="menu-list" tag="div" to="/lvoice/now">
 				<div class="menu-list-div">直播</div>
 			</router-link>
 		</div>

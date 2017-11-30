@@ -3068,7 +3068,7 @@ module.exports = function (path, param, context) {
 												}]
 						    	}],
     		"recommendMinSheets": [{
-					    			"name":"「华语情歌」想得却不可得,你奈人生何",
+					    			"name":"贷款买房 | 如何根据资金情况，判断自己的购房能力？",
 					    			"disc":"歌单推荐:我认识的只有合久分了,没见过分久还能合的...",
 									"count":"5",
 									"listencount":"560978",
@@ -3077,7 +3077,7 @@ module.exports = function (path, param, context) {
 									"showbottomtips":false,
 									"bottomtips":"",
 									"showbottomtitle":true,
-									"bottomtitle":"「华语情歌」想得却不可得,你奈人生何",
+									"bottomtitle":"贷款买房 | 如何根据资金情况，判断自己的购房能力？",
 									"padding":"0 2px 2px 0",
 									"listwidth":"33.33333333%",
 									"tips":["华语","爱情"],
@@ -3134,7 +3134,7 @@ module.exports = function (path, param, context) {
 											 ]
 									},
 						    		{
-						    			"name":"自从听了这些音乐，敲代码越开越顺了，腰不酸腿不痛了",
+						    			"name":"北京地铁2号线沿线千万一下改善三局",
 						    			"disc":"歌单推荐:我认识的只有合久分了,没见过分久还能合的...",
 										"count":"3",
 										"listencount":"219899",
@@ -3143,7 +3143,7 @@ module.exports = function (path, param, context) {
 										"showbottomtips":false,
 										"bottomtips":"",
 										"showbottomtitle":true,
-										"bottomtitle":"自从听了这些音乐，敲代码越开越顺了，腰不酸腿不痛了",
+										"bottomtitle":"北京地铁2号线沿线千万一下改善三局",
 										"padding":"0 2px 2px 0",
 										"listwidth":"33.33333333%",
 										"tips":["电音","纯音乐"],
