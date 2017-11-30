@@ -49,12 +49,12 @@ export default Vue.component('home', {
       }
     },
     computed: {
-    reconmmend () {
-      return store.getters.getAllInfo
-    },
-    swiper () {
-      return this.$refs.mySwiper.swiper
-    }
+      reconmmend () {
+        return store.getters.getAllInfo || '暂无数据'
+      },
+      swiper () {
+        return this.$refs.mySwiper.swiper
+      }
     },
     methods: {
     showSongSheet (data) {

@@ -114,7 +114,7 @@ export default Vue.component('app', {
     // 'song-sheet': songsheet
   },
   created () {
-    let LocalAPI = '/data.json'
+    let LocalAPI = '/test.json'
     axios.get(LocalAPI).then((res) => {
       // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
       this.info = res.data.user
