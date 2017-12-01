@@ -7,7 +7,7 @@
   "scripts": {
     "node": "cross-env ENV=DEV node server.js",
     "open": "cross-env ENV=DEV webpack-dev-server --config wp.config.js --inline --hot --quiet --progress --content-base pages/ --host 127.0.0.1 --port 8080 --open ",
-    "build": "cross-env ENV=PROD CDN='../dist/' webpack --config wp.config.js",
+    "build": "cross-env ENV=PROD CDN='/static/dist/' webpack --config wp.config.js",
     "start": "npm run node"
   },
   "dependencies": {

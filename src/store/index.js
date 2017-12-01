@@ -10,7 +10,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    allInfo: []
+    allInfo: [],
+    errorMsg: ''
   },
   getters: {
     getAllInfo: state => state.allInfo,
@@ -20,6 +21,9 @@ const store = new Vuex.Store({
   mutations: {
     setAllInfo (state, obj) {
       state.allInfo = obj
+    },
+    setErrorMsg (state, obj) {
+      state.errorMsg = obj.errorMsg
     }
   },
   actions: {
@@ -29,11 +33,11 @@ const store = new Vuex.Store({
   },
 
   modules: {
-    sideBar: Sidebar,
-    audioInfo: AudioInfo,
-    menuList: MenuList,
-    musiclist: MusicList,
-    reconmmed: Reconmmed
+    sideBar: Sidebar, // 轮播图
+    audioInfo: AudioInfo, // 播放信息
+    menuList: MenuList, // 列表
+    musiclist: MusicList, // 列表
+    reconmmed: Reconmmed // 推荐
   }
 })
 

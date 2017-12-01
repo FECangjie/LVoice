@@ -1,4 +1,5 @@
 <div class="error-page">
-  <i class="el-icon-warning"></i>
-  <div>{{ errorTip }}</div>
+  <div class="title">{{ title }}</div>
+  <i class="icon-warning"></i>
+  <div class="msg">{{ msg }}</div>
 </div>

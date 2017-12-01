@@ -22,6 +22,10 @@ window.$http = Axios.create({
 Vue.config.devtools = true
 Vue.config.debug = true // 开启错误提示
 Vue.use(MintUI)
+//
+// router.beforeEach((to, from, next) => { // 路由钩子（登陆等）
+//     next();
+// })
 
 new Vue({
   store,

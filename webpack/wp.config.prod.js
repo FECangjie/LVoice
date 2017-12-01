@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var ENV = process.env.ENV
 var CDN = process.env.CDN
 var ROOT = path.resolve(__dirname, '../')
@@ -70,6 +69,5 @@ module.exports = {
 			new webpack.LoaderOptionsPlugin({
 					minimize: true
 			}),
-			new ExtractTextPlugin( path.resolve(ROOT, './[name].css'))
 	])
 }

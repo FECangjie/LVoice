@@ -1,5 +1,6 @@
 <div id="app">
-    <audio id="myaudio" ref="audio" @timeupdate="musicTimeUpdate" @canplay="musicCanPlay" @playing="musicOnPlaying" @ended="musicEnded" @waiting="musicOnWaiting" @pause="musicOnPause" @loadstart="loadStart"></audio>
+  <div v-if="page">
+    <audio id="myaudio" ref="audio" @timeupdate="musicTimeUpdate" @canplay="musicCanPlay" @playing="musicOnPlaying" @ended="musicEnded" @waiting="musicOnWaiting" @pause="musicOnPause" @loadstart="loadStart" ></audio>
     <!-- 头部header -->
     <v-header></v-header>
     <!-- 侧边栏列表 -->
@@ -10,9 +11,10 @@
     <!-- <music-list></music-list> -->
     <!-- 底部固定页 -->
     <!-- <bottom-bar></bottom-bar> -->
-    <router-view></router-view>
     <!-- 音乐播放详情  显示cd页 -->
     <!-- <music-detail></music-detail> -->
     <!-- 歌单详情页 -->
     <!-- <song-sheet></song-sheet> -->
+  </div>
+  <router-view></router-view>
 </div>
