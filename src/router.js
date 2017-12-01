@@ -3,7 +3,6 @@ import Vue from 'vue'
 
 import homePage from './pages/home'
 import Recommend from './pages/home/recommend'
-import minePage from './pages/mine'
 import listPage from './pages/list'
 import ErrorPage from './pages/error'
 
@@ -30,10 +29,6 @@ export const router = new VueRouter({
               path: '/lvoice/recommend',
               component: Recommend
           }]
-      },
-      {
-          path:'/mine',
-          component: minePage
       },
       {
           path:'/list',
