@@ -116,7 +116,7 @@ export default Vue.component('app', {
   },
   created () {
     let me = this
-    let LocalAPI = '/test.json'
+    let LocalAPI = '/data.json'
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
