@@ -15,6 +15,10 @@
     <!-- 歌单详情页 -->
     <!-- <song-sheet></song-sheet> -->
   <router-view></router-view>
-  <div v-if="page" class="loading">
+  <div v-if="loading" class="loading">
+    <div class="content">
+      <i class="icon-music icon-type"></i>
+      <span>LVoice</span>
+    </div>
   </div>
 </div>
