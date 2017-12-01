@@ -7,66 +7,70 @@ import tpl from './tpl.vtpl'
 import './style.less'
 
 import store from 'store'
-import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default Vue.component('v-header', {
-  props: {
-    index: {
-      type: Number,
-      default: 0
-    },
-    showMenu: {
-      type: Boolean,
-      default: false
-    }
-  },
   data () {
     return {
-      selectIndex: this.index,
-      isShowMenu: this.showMenu
+      audioInfo: {
+      },
+      myaudio: {},
+      state: {
+        isplaying: false,
+        loading: false,
+        currentIndex: 0
+      }
     }
   },
-
   methods: {
-    // showMueu () {
-    //   store.dispatch({
-    //     type: 'showSideBar'
-    //   })
-    // },
-    // hideMenu () {
-    //   store.dispatch({
-    //     type: 'hideSideBar'
-    //   })
-    // },
-    //
-    // ...mapMutations({
-    //   adds: 'increment'
-    // }),
-    //
-    // ...mapActions({}),
-    // add () {
-    //   this.$store.dispatch({
-    //     type: 'myactionAsync',
-    //     count: 10
-    //   })
-    // }
-
-    // sideBar () {
-    // 	alert(store.state.sideBar.isShow)
-    // }
-    // add () {
-    // 	try {
-    // 		store.dispatch({
-    // 			type: 'myactionAsync',
-    // 			count: 10
-    // 		})
-    // 	} catch (error) {
-    // 		alert(error)
-    // 	}
-    // }
+    // 控制音乐播放暂停
+    playpause () {
+      store.commit('togglePlay')
+    },
+    // 显示播放列表
+    showMusicList () {
+      let scrollTop = (this.$store.getters.getCurrentIndex + 1 - 3) * 42
+      store.dispatch({
+        type: 'set_ScrollTop',
+        scrollTop: scrollTop
+      })
+      store.dispatch('showMusicList')
+    },
+    playNext () {
+      store.dispatch('play_Next')
+    },
+    showMusicDetail () {
+      store.dispatch({
+        type: 'set_MusicDetail',
+        isShow: true
+      })
+    }
   },
-
-  components: {
+  computed: {
+    iconPlayPause () {
+      return this.audioInfo.playing
+    },
+    // 获取音乐名称
+    musicName () {
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.name : ''
+    },
+    // 获取歌手名称
+    musicSinger () {
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.singer : ''
+    },
+    // 获取音乐封面地址
+    musicImage () {
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.img_url : ''
+    },
+    // 获取音乐播放地址
+    musicUrl () {
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.url : ''
+    }
+  },
+  mounted () {
+    // 所有的audio的 vuex 的状态信息
+    this.audioInfo = this.$store.state.audioInfo
+    // 音乐是否play
+    this.state.isplaying = this.audioInfo.playing
   },
   template: tpl
 })

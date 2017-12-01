@@ -99,6 +99,7 @@ const audioInfo = {
 				state.audioelement.pause()
 			} else {
 				state.playing = true
+				debugger
 				state.audioelement.play()
 			}
 		},

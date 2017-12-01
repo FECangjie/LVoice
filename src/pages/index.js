@@ -11,8 +11,8 @@ import { router } from '../router.js'
 import { MessageBox } from 'mint-ui';
 
 import header from 'components/header'
+import bottombar from 'components/bottomControl'
 import sidebar from 'components/header'
-import bottombar from 'components/header'
 import mymusic from 'components/header'
 import musiclist from 'components/header'
 import musicdetail from 'components/header'
@@ -23,7 +23,7 @@ export default Vue.component('app', {
   data () {
     return {
       info: {},
-      page: false // 页面
+      loading: true // 加载
     }
   },
   methods: {
@@ -107,7 +107,7 @@ export default Vue.component('app', {
   components: {
     'v-header': header,
     // 'side-bar': sidebar,
-    // 'bottom-bar': bottombar,
+    'bottom-bar': bottombar,
     // 'my-music': mymusic,
     // // 'menu-list': menulist,
     // 'music-list': musiclist,
@@ -122,7 +122,7 @@ export default Vue.component('app', {
     }
     axios.get(LocalAPI).then((res) => {
       if (res.data && res.data.music) {
-        me.page = true
+        me.loading = false
         // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
         this.info = res.data.user
         // 把所有的音乐数据给vuex的musicAllList
