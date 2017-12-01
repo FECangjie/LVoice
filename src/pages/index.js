@@ -12,6 +12,8 @@ import { MessageBox } from 'mint-ui';
 
 import header from 'components/header'
 import bottombar from 'components/bottomControl'
+import voicedetail from 'pages/volice'
+
 import sidebar from 'components/header'
 import mymusic from 'components/header'
 import musiclist from 'components/header'
@@ -23,6 +25,7 @@ export default Vue.component('app', {
   data () {
     return {
       info: {},
+      msg: 'LVoice',
       loading: true // 加载
     }
   },
@@ -111,7 +114,7 @@ export default Vue.component('app', {
     // 'my-music': mymusic,
     // // 'menu-list': menulist,
     // 'music-list': musiclist,
-    // 'music-detail': musicdetail,
+    'music-detail': voicedetail,
     // 'song-sheet': songsheet
   },
   created () {
@@ -122,7 +125,9 @@ export default Vue.component('app', {
     }
     axios.get(LocalAPI).then((res) => {
       if (res.data && res.data.music) {
-        me.loading = false
+        setTimeout(function(){
+          me.loading = false
+        }, 100)
         // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
         this.info = res.data.user
         // 把所有的音乐数据给vuex的musicAllList

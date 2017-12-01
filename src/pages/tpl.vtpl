@@ -1,24 +1,25 @@
 <div id="app">
-    <audio id="myaudio" ref="audio" @timeupdate="musicTimeUpdate" @canplay="musicCanPlay" @playing="musicOnPlaying" @ended="musicEnded" @waiting="musicOnWaiting" @pause="musicOnPause" @loadstart="loadStart" ></audio>
-    <!-- 头部header -->
-    <v-header></v-header>
-    <!-- 侧边栏列表 -->
-    <!-- <side-bar :info="info"></side-bar> -->
-    <!-- 底部显示的菜单列表 -->
-    <!-- <menu-list></menu-list> -->
-    <!-- 底部显示的浮层页  音乐列表 -->
-    <!-- <music-list></music-list> -->
-    <!-- 底部固定页 -->
-    <bottom-bar></bottom-bar>
-    <!-- 音乐播放详情  显示cd页 -->
-    <!-- <music-detail></music-detail> -->
-    <!-- 歌单详情页 -->
-    <!-- <song-sheet></song-sheet> -->
+  <audio id="myaudio" ref="audio" @timeupdate="musicTimeUpdate" @canplay="musicCanPlay" @playing="musicOnPlaying" @ended="musicEnded" @waiting="musicOnWaiting" @pause="musicOnPause" @loadstart="loadStart" ></audio>
+  <!-- 头部header -->
+  <v-header></v-header>
+  <!-- 侧边栏列表 -->
+  <!-- <side-bar :info="info"></side-bar> -->
+  <!-- 底部显示的菜单列表 -->
+  <!-- <menu-list></menu-list> -->
+  <!-- 底部显示的浮层页  音乐列表 -->
+  <!-- <music-list></music-list> -->
+  <!-- 底部固定页 -->
+  <bottom-bar></bottom-bar>
+  <!-- 音乐播放详情  显示cd页 -->
+  <music-detail></music-detail>
+  <!-- 歌单详情页 -->
+  <!-- <song-sheet></song-sheet> -->
   <router-view></router-view>
+
   <div v-if="loading" class="loading">
     <div class="content">
       <i class="icon-music icon-type"></i>
-      <span>LVoice</span>
+      <span>{{ msg }}</span>
     </div>
   </div>
 </div>
