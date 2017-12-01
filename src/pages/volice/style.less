@@ -28,7 +28,7 @@
     transition:all 0.5s;
     right:0;
     z-index:16;
-    filter: url(../../common/blur.svg#blur);
+    // filter: url(../../common/blur.svg#blur);
     filter:blur(30px);
   }
 
@@ -96,10 +96,12 @@
       bottom:20vh;
       right:0;
       overflow:hidden;
-      &.fade-enter-to, &.fade-leave-to
+      &.fade-enter-to, &.fade-leave-to {
         transition: opacity 0.3s;
-      &.fade-enter, &.fade-leave-to
+      }
+      &.fade-enter, &.fade-leave-to {
         opacity: 0;
+      }
       .cd {
         .swith-line {
           width:80%;
@@ -147,15 +149,15 @@
               top:0;
               left:50%;
               transform:translate3d(-50%,0,0);
-              background:url('/static/images/cd-mine.png');
-              background-size:100%;
               z-index:2;
+              border-radius: 44vh;
             }
             .img {
               position:absolute;
               display:block;
               width:28vh;
               height:28vh;
+              border-radius: 28vh;
               top:8vh;
               transition:all 0.3s;
               left:50%;

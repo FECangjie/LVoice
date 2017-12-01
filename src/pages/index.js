@@ -20,6 +20,7 @@ import musiclist from 'components/header'
 import musicdetail from 'components/header'
 import songsheet from 'components/header'
 
+let musicLrcIndex = 0 // 播放控制
 
 export default Vue.component('app', {
   data () {

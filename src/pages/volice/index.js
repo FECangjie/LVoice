@@ -7,6 +7,7 @@ import './style.less'
 import tpl from './tpl.vtpl'
 
 import store from 'store'
+import range from 'pages/range'
 
 export default Vue.component('volice', {
   data () {
@@ -121,7 +122,7 @@ export default Vue.component('volice', {
     }
   },
   components: {
-    // 'range': range // 进度条
+    'range': range // 进度条
   },
   mounted () {
     let _this = this
