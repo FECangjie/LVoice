@@ -106,7 +106,6 @@ export default Vue.component('range', {
 				persentWidth = persentWidth > 100 ? 100 : persentWidth
 				persentWidth = persentWidth < 0 ? 0 : persentWidth
 				if (this.type === 'progress') {
-					// this.$store.getters.getAudioElement.currentTime = this.duration * persentWidth / 100
 					this.$refs.currentProgress.style.width = `${persentWidth}%`
 					this.$refs.ball.style.left = `calc(${persentWidth}% - 7px)`
 				}
@@ -139,7 +138,6 @@ export default Vue.component('range', {
 					persentWidth = Math.floor((mouseX - offsetLeft) / this.$refs.duration.offsetWidth * 100)
 					persentWidth = persentWidth > 100 ? 100 : persentWidth
 					persentWidth = persentWidth < 0 ? 0 : persentWidth
-					// this.$store.getters.getAudioElement.currentTime = this.duration * persentWidth / 100
 					this.$refs.currentProgress.style.width = `${persentWidth}%`
 					this.$refs.ball.style.left = `calc(${persentWidth}% - 7px)`
 				}
@@ -147,7 +145,6 @@ export default Vue.component('range', {
 					let mouseX = event.touches[0].pageX
 					let offsetLeft = this.$refs.duration.offsetLeft
 					persentWidth = Math.floor((mouseX - offsetLeft) / this.$refs.duration.offsetWidth * 100)
-					// alert(Math.floor((mouseX - offsetLeft) / this.$refs.duration.offsetWidth * 100))
 					this.$store.getters.getAudioElement.volume = persentWidth / 100
 					this.$refs.currentProgress.style.width = `${persentWidth}%`
 					this.$refs.ball.style.left = `calc(${persentWidth}% - 7px)`
