@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+
 import Sidebar from './modules/sidebar.js'
 import AudioInfo from './modules/audio.js'
 import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
+
 
 Vue.use(Vuex)
 
@@ -38,6 +41,36 @@ const store = new Vuex.Store({
     },
     set_TuijianList ({ commit }, obj) {
       commit('setTuijianList', obj)
+    },
+    set_Voice({ commit }, obj) {
+      const bofangAPI = '/bofang.json'
+      axios.get(bofangAPI, {params:obj}).then((res) => { // 播放信息
+        if (res.data) {
+          let list = res.data
+          list.url = list.mp3_url
+          store.commit({
+            type: 'setMusicList',
+            list: [list]
+          })
+          store.commit({
+            type: 'playIndex',
+            index: 0
+          })
+          store.dispatch({
+            type: 'set_MusicDetail',
+            isShow: true
+          })
+        } else {
+
+        }
+      }, (err) => {
+          MessageBox.alert(err, '请求失败').then(() => {
+          store.commit('setErrorMsg',{
+            errorMsg: '网络出错啦～'
+          })
+          router.push('/error')
+        })
+      })
     }
   },
 

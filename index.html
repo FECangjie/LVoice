@@ -3,70 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>
-        家音
-    </title>
+    <title>家音</title>
     <meta name="keywords" content="首页">
     <meta name="description" content="首页" />
     <meta name="renderer" content="webkit">
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <meta content="always" name="referrer">
-    <script type="text/javascript">
-    (function(win, doc) {
-        var isIOS = win.navigator.appVersion.match(/iphone/gi);
-        var isAndorid = win.navigator.appVersion.match(/android/gi);
-        var deviceDpr = win.devicePixelRatio;
-        var setDpr = 1;
-        var scale = 1;
-        var rootEle = doc.documentElement;
-        var viewport = doc.querySelector('meta[name="viewport"]');
-
-        // 只针对ios进行处理
-        if (isIOS) {
-            if (deviceDpr >= 3) {
-                setDpr = 3;
-            } else if (deviceDpr >= 2) {
-                setDpr = 2;
-            } else {
-                setDpr = 1;
-            }
-        } else {
-            // 对安卓及其他设备设置dpr为1
-            setDpr = 1;
-        }
-        scale = 1 / setDpr;
-
-        if (!viewport) {
-            viewport = doc.createElement('meta');
-            viewport.setAttribute('name', 'viewport');
-            viewport.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=' + 'no, uc-fitscreen=yes');
-
-            if (!rootEle.firstElementChild) {
-                var wrapper = doc.createElement('div');
-                wrapper.appendChild(viewport);
-                doc.write(wrapper.innerHTML);
-            } else {
-                rootEle.firstElementChild.appendChild(viewport);
-            }
-
-        } else {
-            // 如果页面已经设置了viewport，则对viewport进行更改     
-            viewport.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no, uc-fitscreen=yes');
-        }
-        rootEle.setAttribute('style', 'font-size: ' + 16 * setDpr + 'px;');
-
-        window.DPR = setDpr;
-
-    })(window, window.document);
-    </script>
     <script type="text/javascript" src="http://s1.ljcdn.com/m-base/release/v02.4/asset/all_de85ed926b9c10q3.js"></script>
     <script src="https://cdn.bootcss.com/moment.js/2.10.6/moment-with-locales.min.js"></script>
     <!-- <link href="/dist/main.css" rel="stylesheet"></head> -->
-
     <body>
-        <div id="root">
-        </div>
-        <script src="/dist/main.js"></script>
+      <div id="root">
+      </div>
+      <script src="/dist/main.js"></script>
     </body>
-
 </html>

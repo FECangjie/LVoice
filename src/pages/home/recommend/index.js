@@ -66,6 +66,19 @@ export default Vue.component('home', {
         type: 'setIsShowSongSheet',
         isShow: true
       })
+    },
+    swiperClick(e) { // 轮播图点击播放
+      const index = this.swiperIndex
+      let target = e.target
+      let swiper = $(target).parent()
+      let list = JSON.parse(swiper[0].getAttribute('songlist'))
+      console.log('--------播放详情--------')
+      console.log(list)
+      store.dispatch('set_Voice',{id: 123})
+
+    },
+    swiperChange(index) { // 轮播图切换
+      this.swiperIndex = index
     }
     },
   mounted () {

@@ -1,4 +1,4 @@
-<div class="recommend" v-if="reconmmend && reconmmend.findmusic">
+<div class="recommend" v-if="tuijian">
 	<mt-swipe :auto="4000" ref="mySwiper" @change="swiperChange">
 	  <mt-swipe-item  v-for="item in tuijian.top_list" :key="" :songlist="JSON.stringify(item)">
 			<img class="image" :src="item.tupian_url" alt="" @click="swiperClick">
