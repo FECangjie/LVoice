@@ -8,6 +8,7 @@ import listPage from './pages/list'
 import ErrorPage from './pages/error'
 import nice from './pages/home/nice'
 import listPage2 from './pages/listPage'
+import board from './pages/home/board'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -38,6 +39,10 @@ export const router = new VueRouter({
                 {
                     path: '/lvoice/nice',
                     component: nice
+                },
+                {
+                    path: '/lvoice/rank',
+                    component: board
                 }
             ]
         },

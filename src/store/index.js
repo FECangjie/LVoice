@@ -7,7 +7,6 @@ import AudioInfo from './modules/audio.js'
 import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
-import host from 'common/host'
 
 
 Vue.use(Vuex)
@@ -90,7 +89,7 @@ const store = new Vuex.Store({
       const catlistAPI = host() + '/voice/fenlei_list.json'
       axios.get(catlistAPI, { params: obj }).then((res) => {
         if (res.data) {
-          console.log('请求成功')
+          console.log(res.data)
         } else {
 
         }
