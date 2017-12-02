@@ -1,12 +1,12 @@
 <div>
-<div class="board flex-box" :style="{}" v-for="(item, i) in list">
+<div class="board flex-box" :style="{}" v-for="(item, i) in list" :uuid="item.uuid" @click="showVoice">
     <div class="first order" v-if="i == 0">1</div>
     <div class="second order" v-if="i == 1">2</div>
     <div class="third order" v-if="i == 2">3</div>
     <div class="order" v-if="i > 2">{{i + 1}}</div>
     <div class="content">
         <div class="image" :style="{ backgroundImage : 'url('+item.tupian_url+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
-        <span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{item.click_count}}</span>
+        <span class="toprighttips" v-if="showtoprighttips"><i class="icon-headphones" :class="toprighticonclass" style="margin-right: 5px;"></i>{{item.click_count}}</span>
         <span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
     </div>
     <div class="right flex-box">

@@ -5,6 +5,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import store from 'store'
 import './style.less'
 import tpl from './tpl.vtpl'
 
@@ -48,6 +49,12 @@ export default Vue.component('board', {
         },
         listwidth: {
             type: String
+        }
+    },
+    methods: {
+        showVoice(e) { // 点击播放
+          let target = e.target
+          store.dispatch('set_Voice',{uuid: target.getAttribute('uuid')})
         }
     },
     computed: {
