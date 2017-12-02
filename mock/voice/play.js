@@ -10,7 +10,7 @@ module.exports = function(path, param, context) {
             "pindao_biaoti": "我要买房",
             "tupian_url": "http://10.23.247.62:8081/lvoice/b115c35d-8d93-4c80-9404-b2fb304141d6.jpg",
             "jieshao": "20179月楼市持续降温 多家热盘去化率直线下滑",
-            "mp3_url": "http://10.23.247.62:8081/lvoice/b6b2902a-75ab-48ee-8c2b-ae61810b51a5.m4a",
+            "mp3_url": "http://audio.xmcdn.com/group35/M07/00/D7/wKgJnFoeY96DyiXSAG4JRJ7abr4415.m4a",
             "click_count": "0",
             "good_count": null,
             "ungood_count": null,
