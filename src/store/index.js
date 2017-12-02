@@ -7,7 +7,6 @@ import AudioInfo from './modules/audio.js'
 import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
-import host from 'common/host'
 
 
 Vue.use(Vuex)
@@ -75,10 +74,10 @@ const store = new Vuex.Store({
     },
     // 分类页发送ajax请求
     set_Category({ commit }, obj) {
-      const catlistAPI = 'http://172.30.13.76:12101/voice/fenlei_list'
+      const catlistAPI = window.env=='dev' ?'/voice/fenlei_list.json' : 'http://172.30.13.76:12101/voice/fenlei_list'
       axios.get(catlistAPI, { params: obj }).then((res) => {
         if (res.data) {
-          console.log('请求成功')
+          console.log(res.data)
         } else {
 
         }
