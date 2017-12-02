@@ -8,8 +8,8 @@
 			<div class="content-header">
 				<i class="back icon1-back" @click="hideMusicDetail"></i>
 				<div class="musicTopDetail">
-					<p class="name">{{getCurrentMusic.biaoti}}</p>
-					<p class="singer">{{getCurrentMusic.zhubo_name}}</p>
+					<p class="name">{{getCurrentMusic.pindao_name}}</p>
+					<p class="singer">{{ getCurrentMusic.user_name}}</p>
 				</div>
 				<i class="share icon1-share"></i>
 			</div>
@@ -48,7 +48,7 @@
 							<div class="zhuanji">
 								<img class="img" :src="getCurrentMusic.tupian_url" alt="">
 								<div class="title">
-									{{ getCurrentMusic.dingyue_name }}
+									{{getCurrentMusic.pindao_biaoti + '-' + getCurrentMusic.user_name}}
 								</div>
 							</div>
 
@@ -62,7 +62,7 @@
 						<div class="tuijian">
 							<span>相关推荐</span>
 							<div class="list">
-								<list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn" :item="o"></list @click.stop="showSongSheet(list)">
+								<list v-if="tuijian" v-for="(o, i) in tuijian.list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.pindao_name" :item="o"></list @click.stop="showSongSheet(list)">
 							</div>
 						</div>
 						<div class="div-lrc" ref="divlrc">

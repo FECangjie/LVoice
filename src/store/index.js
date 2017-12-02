@@ -17,11 +17,13 @@ const store = new Vuex.Store({
     allInfo: [],
     errorMsg: '',
 
-    tuijian: {}
+    tuijian: [],
+    voiceTuijian: []
   },
   getters: {
     getAllInfo: state => state.allInfo,
     getTuijian: state => state.tuijian,
+    getVoiceTuijian: state => state.voiceTuijian,
     // 获取推荐歌单信息
     getFindMusic: state => state.musicAllList.findmusic
   },
@@ -34,6 +36,9 @@ const store = new Vuex.Store({
     },
     setTuijianList(state, obj) {
       state.tuijian = obj
+    },
+    setVoiceTuijianList(state, obj) {
+      state.voiceTuijian = obj
     }
   },
   actions: {
@@ -43,15 +48,22 @@ const store = new Vuex.Store({
     set_TuijianList ({ commit }, obj) {
       commit('setTuijianList', obj)
     },
+    set_VoiceTuijianList ({ commit }, obj) {
+      commit('setVoiceTuijianList', obj)
+    },
     set_Voice({ commit }, obj) {
-      const bofangAPI = host() + '/api/play.json'
+      const bofangAPI = host() + '/voice/play.json'
       axios.get(bofangAPI, {params:obj}).then((res) => { // 播放信息
         if (res.data) {
-          let list = res.data
+          let list = res.data.detail
           list.url = list.mp3_url
           store.commit({
             type: 'setMusicList',
             list: [list]
+          })
+          store.commit({
+            type: 'setVoiceTuijianList',
+            list: res.data.others || []
           })
           store.commit({
             type: 'playIndex',
@@ -75,7 +87,7 @@ const store = new Vuex.Store({
     },
     // 分类页发送ajax请求
     set_Category({ commit }, obj) {
-      const catlistAPI = 'http://172.30.13.76:12101/voice/fenlei_list'
+      const catlistAPI = host() + '/voice/fenlei_list.json'
       axios.get(catlistAPI, { params: obj }).then((res) => {
         if (res.data) {
           console.log('请求成功')

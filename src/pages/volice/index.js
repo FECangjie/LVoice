@@ -106,7 +106,7 @@ export default Vue.component('volice', {
       return this.$store.getters.getLyricIndex ? this.$store.getters.getLyricIndex : 0
     },
     tuijian () {
-      return store.getters.getTuijian || {}
+      return this.$store.getters.getVoiceTuijian || {}
     },
   },
   watch: {
