@@ -16,9 +16,8 @@ const musiclist = {
 		hideMusic (state) {
 			state.isShow = HIDE_MUSIC_LIST
 		},
-		setScrollTop (state, scrollTop) {
+		setScrollTop (state, scrollTop) { // 浮层弹起
 			setTimeout(function () {
-				// alert(scrollTop)
 				state.refs.scrollTop = scrollTop
 			}, 100)
 		},

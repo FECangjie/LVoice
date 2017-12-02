@@ -13,10 +13,11 @@ import { MessageBox } from 'mint-ui';
 import header from 'components/header'
 import bottombar from 'components/bottomControl'
 import voicedetail from 'pages/volice'
+import menulist from 'pages/menulist'
+import musiclist from 'pages/volice/musiclist'
 
 import sidebar from 'components/header'
 import mymusic from 'components/header'
-import musiclist from 'components/header'
 import musicdetail from 'components/header'
 import songsheet from 'components/header'
 
@@ -114,8 +115,8 @@ export default Vue.component('app', {
     // 'side-bar': sidebar,
     'bottom-bar': bottombar,
     // 'my-music': mymusic,
-    // // 'menu-list': menulist,
-    // 'music-list': musiclist,
+    'menu-list': menulist,
+    'music-list': musiclist,
     'music-detail': voicedetail,
     // 'song-sheet': songsheet
   },
