@@ -29,6 +29,7 @@
 					<!-- <div class="lrc" v-if="getCurrentMusic">
 						{{musicCurrentLrc}}
 					</div> -->
+
 					<div class="musicDo">
 						<i class="icon icon-like"></i>
 						<i class="icon icon-download"></i>
@@ -43,6 +44,14 @@
 						<range range-type="volume" ball-width="10" current-color="rgba(255,255,255,0.8)"></range>
 					</div>
 					<div class="lrc" ref="lrc" :scroll-top.prop="scrollTop">
+						<div class="jieshao">
+							<div class="title">
+								家音简介
+							</div>
+							<div class="content">
+								{{ getCurrentMusic.jieshao }}
+							</div>
+						</div>
 						<div class="div-lrc" ref="divlrc">
 							<p v-if="getCurrentMusic" v-for="(lrc, index) in getCurrentMusic.lyric" :data-index="index" :class="lrcIndex === index ? 'active musiclrc' : 'musiclrc'" :data-timeid="lrc.timeId">{{lrc === '' ? '暂无歌词' : lrc.text}} </p>
 						</div>

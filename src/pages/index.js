@@ -51,7 +51,8 @@ export default Vue.component('app', {
       // 设置歌词内容(以索引的形式显示,主要是)
       let musicLrc = store.getters.getCurrentMusic.lyric
       let currentTime = Math.floor(this.$refs.audio.currentTime)
-      if (musicLrc[musicLrcIndex] === undefined) return
+
+      if (!(musicLrc && musicLrc[musicLrcIndex])) return
       if (musicLrc.length === 0) {
         store.commit({
           type: 'setLyricIndex',
@@ -125,6 +126,7 @@ export default Vue.component('app', {
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
+
     // axios.get(LocalAPI).then((res) => {
     //   if (res.data && res.data.music) {
     //     // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
@@ -159,6 +161,8 @@ export default Vue.component('app', {
           me.loading = false
         }, 100)
         store.dispatch('set_TuijianList', res.data)
+        // 给audio元素存在vuex 的state里面  方便日后调用
+        store.dispatch('set_AudioElement', this.$refs.audio)
     }, (err) => {
         MessageBox.alert(err, '请求失败').then(() => {
         store.commit('setErrorMsg',{

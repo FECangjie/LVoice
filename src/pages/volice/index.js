@@ -6,6 +6,7 @@ import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
 
+import axios from 'axios'
 import store from 'store'
 import range from 'pages/range'
 
@@ -133,6 +134,8 @@ export default Vue.component('volice', {
         _this.scrollTop = top - height / 2
       }
     }, 2000)
+  },
+  created() {
   },
   template: tpl
 })

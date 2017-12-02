@@ -78,18 +78,8 @@ export default Vue.component('home', {
       let list = JSON.parse(swiper[0].getAttribute('songlist'))
       console.log('--------播放详情--------')
       console.log(list)
-      store.commit({
-        type: 'setMusicList',
-        list: list
-      })
-      store.commit({
-        type: 'playIndex',
-        index: 0
-      })
-      store.dispatch({
-        type: 'set_MusicDetail',
-        isShow: true
-      })
+      store.dispatch('set_Voice',{id: 123})
+
     },
     swiperChange(index) { // 轮播图切换
       this.swiperIndex = index
