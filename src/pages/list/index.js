@@ -4,10 +4,9 @@
  */
 import Vue from 'vue'
 import './style.less'
-// import musicsheet from '../musicsheet/musicsheet.vue'
-import typelist from '../typelist'
-// import menulist from '../menulist'
 import tpl from './tpl.vtpl'
+
+import store from 'store'
 
 export default Vue.component('list', {
   props: {
@@ -44,6 +43,19 @@ export default Vue.component('list', {
     },
     listwidth: {
       type: String
+    },
+    item: {
+    }
+  },
+  methods: {
+    showVolice(e) { // 点击播放
+      const index = this.swiperIndex
+      let target = e.target
+      let list = JSON.parse(target.getAttribute('songlist'))
+      console.log('--------播放详情--------')
+      console.log(list)
+      store.dispatch('set_Voice',{id: 123})
+
     }
   },
   computed: {

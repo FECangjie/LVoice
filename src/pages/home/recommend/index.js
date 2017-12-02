@@ -59,29 +59,38 @@ export default Vue.component('home', {
       }
     },
     methods: {
-    showSongSheet (data) {
-      store.dispatch({
-        type: 'set_MusicSheetList',
-        data: data
-      })
-      store.commit({
-        type: 'setIsShowSongSheet',
-        isShow: true
-      })
-    },
-    swiperClick(e) { // 轮播图点击播放
-      const index = this.swiperIndex
-      let target = e.target
-      let swiper = $(target).parent()
-      let list = JSON.parse(swiper[0].getAttribute('songlist'))
-      console.log('--------播放详情--------')
-      console.log(list)
-      store.dispatch('set_Voice',{id: 123})
+      showSongSheet (data) {
+        store.dispatch({
+          type: 'set_MusicSheetList',
+          data: data
+        })
+        store.commit({
+          type: 'setIsShowSongSheet',
+          isShow: true
+        })
+      },
+      swiperClick(e) { // 轮播图点击播放
+        const index = this.swiperIndex
+        let target = e.target
+        let swiper = $(target).parent()
+        let list = JSON.parse(swiper[0].getAttribute('songlist'))
+        console.log('--------播放详情--------')
+        console.log(list)
+        store.dispatch('set_Voice',{id: 123})
 
-    },
-    swiperChange(index) { // 轮播图切换
-      this.swiperIndex = index
-    }
+      },
+      swiperChange(index) { // 轮播图切换
+        this.swiperIndex = index
+      },
+      showVolice(e) { // 点击播放
+        const index = this.swiperIndex
+        let target = e.target
+        let list = JSON.parse(target.getAttribute('songlist'))
+        console.log('--------播放详情--------')
+        console.log(list)
+        store.dispatch('set_Voice',{id: 123})
+
+      }
     },
   mounted () {
     // this.$refs.mySwiper.slideTo(0, 1000, false)

@@ -53,7 +53,16 @@ export default Vue.component('volice', {
     },
     isShowCD (bool) {
       this.showCD = bool
-    }
+    },
+    showVolice(e) { // 轮播图点击播放
+      const index = this.swiperIndex
+      let target = e.target
+      let list = JSON.parse(target.getAttribute('songlist'))
+      console.log('--------播放详情--------')
+      console.log(list)
+      store.dispatch('set_Voice',{id: 123})
+
+    },
   },
   computed: {
     isShowMusicDetail () {

@@ -1,5 +1,5 @@
 <div class="nice">
     <div class="list">
-        <list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn"></list @click.stop="showSongSheet(list)">
+        <list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn" :item="o"></list @click.stop="showSongSheet(list)">
     </div>
 </div>
