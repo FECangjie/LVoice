@@ -121,14 +121,12 @@ export default Vue.component('app', {
   created () {
     let me = this
     let LocalAPI = '/data.json'
+    let tuijianAPI = '/tuijian.json'
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
     axios.get(LocalAPI).then((res) => {
       if (res.data && res.data.music) {
-        setTimeout(function(){
-          me.loading = false
-        }, 100)
         // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
         this.info = res.data.user
         // 把所有的音乐数据给vuex的musicAllList
@@ -148,7 +146,26 @@ export default Vue.component('app', {
         })
       }
     }, (err) => {
-      alert(err)
+        MessageBox.alert(err, '请求失败').then(() => {
+        store.commit('setErrorMsg',{
+          errorMsg: '网络出错啦～'
+        })
+        router.push('/error')
+      })
+    })
+
+    axios.get(tuijianAPI).then((res) => { // 推荐
+        setTimeout(function(){
+          me.loading = false
+        }, 100)
+        store.dispatch('set_TuijianList', res.data)
+    }, (err) => {
+        MessageBox.alert(err, '请求失败').then(() => {
+        store.commit('setErrorMsg',{
+          errorMsg: '网络出错啦～'
+        })
+        router.push('/error')
+      })
     })
   },
   template: tpl

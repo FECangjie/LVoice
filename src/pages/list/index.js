@@ -49,6 +49,7 @@ export default Vue.component('list', {
   computed: {
     formartTopRight () {
       const numberInfo = Number(this.toprighttitle)
+      debugger
       return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
     }
   },

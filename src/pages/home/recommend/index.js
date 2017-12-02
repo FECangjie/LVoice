@@ -31,7 +31,6 @@ export default Vue.component('home', {
           this.index = swiper.realIndex
         },
         onClick: swiper => {
-          debugger
           const index = swiper.activeIndex
           store.commit({
             type: 'setMusicList',
@@ -54,6 +53,9 @@ export default Vue.component('home', {
     reconmmend () {
       return store.getters.getAllInfo || '暂无数据'
     },
+    tuijian () {
+      return store.getters.getTuijian || {}
+    },
     swiper () {
       return this.$refs.mySwiper.swiper
     }
@@ -69,15 +71,16 @@ export default Vue.component('home', {
         isShow: true
       })
     },
-    swiperClick(e) {
+    swiperClick(e) { // 轮播图点击播放
       const index = this.swiperIndex
       let target = e.target
       let swiper = $(target).parent()
-      debugger
-
+      let list = JSON.parse(swiper[0].getAttribute('songlist'))
+      console.log('--------播放详情--------')
+      console.log(list)
       store.commit({
         type: 'setMusicList',
-        list: JSON.parse(swiper[0].getAttribute('songlist'))
+        list: list
       })
       store.commit({
         type: 'playIndex',
@@ -88,7 +91,7 @@ export default Vue.component('home', {
         isShow: true
       })
     },
-    swiperChange(index) {
+    swiperChange(index) { // 轮播图切换
       this.swiperIndex = index
     }
   },

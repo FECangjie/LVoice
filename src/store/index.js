@@ -11,10 +11,13 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     allInfo: [],
-    errorMsg: ''
+    errorMsg: '',
+
+    tuijian: {}
   },
   getters: {
     getAllInfo: state => state.allInfo,
+    getTuijian: state => state.tuijian,
     // 获取推荐歌单信息
     getFindMusic: state => state.musicAllList.findmusic
   },
@@ -24,11 +27,17 @@ const store = new Vuex.Store({
     },
     setErrorMsg (state, obj) {
       state.errorMsg = obj.errorMsg
+    },
+    setTuijianList(state, obj) {
+      state.tuijian = obj
     }
   },
   actions: {
     set_AllInfo ({ commit }, obj) {
       commit('setAllInfo', obj)
+    },
+    set_TuijianList ({ commit }, obj) {
+      commit('setTuijianList', obj)
     }
   },
 

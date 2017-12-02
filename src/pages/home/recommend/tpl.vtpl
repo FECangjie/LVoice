@@ -1,8 +1,8 @@
 <div class="recommend" v-if="reconmmend && reconmmend.findmusic">
 	<mt-swipe :auto="4000" ref="mySwiper" @change="swiperChange">
-	  <mt-swipe-item  v-for="item in reconmmend.findmusic.reconmmend.recommendImageList" :key="item.id" :songlist="JSON.stringify(item.songList)">
-			<img class="image" :src="item.songList[0].img_url" alt="" @click="swiperClick">
-    	<span class="type" :style="{backgroundColor:item.color}">{{item.type}}</span>
+	  <mt-swipe-item  v-for="item in tuijian.top_list" :key="" :songlist="JSON.stringify(item)">
+			<img class="image" :src="item.tupian_url" alt="" @click="swiperClick">
+    	<span class="type" :style="{backgroundColor:item.tag_color}">{{item.tag_cn}}</span>
 	  </mt-swipe-item>
 	</mt-swipe>
 	<div class="recommend-type">
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="recommend-list">
-		<list v-if="reconmmend" v-for="(sheet, sheetindex) in reconmmend.findmusic.reconmmend.recommendMinSheets" :key="sheet.id" :imagesrc="sheet.info[0].img_url" :showtoprighttips="sheet.showtoptips" :listpadding="sheet.padding" :toprighticonclass="sheet.toptipsclass" :toprighttitle="sheet.listencount" :showbottomtips="sheet.showbottomtips" :bottomtips="sheet.bottomtips" :showbottomtitle="sheet.showbottomtitle" :bottomtitle="sheet.bottomtitle" :listwidth="sheet.listwidth"></list @click.stop="showSongSheet(list)">
+		<list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn"></list @click.stop="showSongSheet(list)">
 
 	</div>
 </div>
