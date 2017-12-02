@@ -1,6 +1,6 @@
 <div class="findmusic">
 		<div class="find-menu">
-			<router-link class="menu-list" tag="div" to="/lvoice/type">
+			<router-link class="menu-list" tag="div" to="/lvoice/category">
 				<div class="menu-list-div">分类</div>
 			</router-link>
 			<router-link class="menu-list" tag="div" to="/lvoice/recommend">
