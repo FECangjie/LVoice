@@ -62,7 +62,9 @@ const audioInfo = {
 		// 获取音乐是否打开底部音乐列表
 		getMusicDetail: state => state.showMusicDetail,
 		// 当前音乐详细信息
-		getCurrentMusic: state => state.musicList[state.currentIndex],
+		getCurrentMusic: state => {
+			return state.musicList[state.currentIndex]
+		},
 		// 获取播放类型
 		getMusicPlayType: state => state.playType,
 		// 获取当前的播放进度

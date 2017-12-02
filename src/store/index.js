@@ -7,7 +7,7 @@ import AudioInfo from './modules/audio.js'
 import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
-
+import host from 'common/host'
 
 Vue.use(Vuex)
 
@@ -52,7 +52,7 @@ const store = new Vuex.Store({
     },
     set_Voice({ commit }, obj) {
       const bofangAPI = host() + '/voice/play.json'
-      axios.get(bofangAPI, {params:obj}).then((res) => { // 播放信息
+      axios.get(bofangAPI, {params:{uuid: obj.uuid}}).then((res) => { // 播放信息
         if (res.data) {
           let list = res.data.detail
           list.url = list.mp3_url
@@ -64,14 +64,18 @@ const store = new Vuex.Store({
             type: 'setVoiceTuijianList',
             list: res.data.others || []
           })
-          store.commit({
-            type: 'playIndex',
-            index: 0
-          })
-          store.dispatch({
-            type: 'set_MusicDetail',
-            isShow: true
-          })
+
+          if (!!obj.show) {
+            store.commit({
+              type: 'playIndex',
+              index: 0
+            })
+            store.dispatch({
+              type: 'set_MusicDetail',
+              isShow: true
+            })
+          }
+
         } else {
 
         }

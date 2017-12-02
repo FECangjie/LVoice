@@ -22,7 +22,7 @@ export default Vue.component('v-header', {
   },
   data () {
     return {
-      selectIndex: this.index,
+      selectIndex: this && this.index,
       isShowMenu: this.showMenu
     }
   },

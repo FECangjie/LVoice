@@ -5,7 +5,7 @@
 				<div class="play-type" @click.stop="setPlayType">
 					<i :class="musicPlayType"></i>
 					<span>{{typeName}}</span>
-					<span>({{musiclist.length}})</span>
+					<span>({{musiclist && musiclist.length}})</span>
 				</div>
 				<div class="right">
 					<div class="collect">
@@ -23,8 +23,8 @@
 				<li class="list" v-for="(item, index) in musiclist" :data-index="index" :class="index === getCurrentIndex ? 'active' : ''" @click.stop="playIndex(index)">
 					<div class="border-1px"></div>
 					<i v-show="index === getCurrentIndex" class="playingicon icon1-volume-medium"></i>
-					<span class="name">{{item.biaoti}}</span>
-					<span class="singer"> - {{item.zhubo_name}}</span>
+					<span class="name">{{item.biaoti_cn}}</span>
+					<span class="singer"> - {{item.user_name}}</span>
 					<i class="close"></i>
 					<div class="border-1px"></div>
 				</li>

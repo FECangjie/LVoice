@@ -10,7 +10,7 @@ import axios from 'axios'
 import store from 'store'
 import typelist from 'pages/typelist'
 
-export default Vue.component('voice-play-list', {
+export default Vue.component('menu-play-list', {
   data () {
     return {
       isShow: false

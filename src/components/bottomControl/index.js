@@ -51,11 +51,11 @@ export default Vue.component('v-header', {
     },
     // 获取音乐名称
     musicName () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.biaoti : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.biaoti_cn : ''
     },
     // 获取歌手名称
     musicSinger () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.zhubo_name : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.user_name : ''
     },
     // 获取音乐封面地址
     musicImage () {
@@ -63,7 +63,7 @@ export default Vue.component('v-header', {
     },
     // 获取音乐播放地址
     musicUrl () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.url : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.mp3_url : ''
     }
   },
   mounted () {

@@ -1,6 +1,9 @@
 module.exports = function(path, param, context) {
     var result = {
-        "moren_id": "1512224143640",
+      "moren_id": "1512224143640",
+      "moren_cn": "大话楼市，畅谈与房子有关的大小事！",
+      "moren_name": "赵禹光",
+      "moren_tupian": "http://10.23.247.62:8081/lvoice/b115c35d-8d93-4c80-9404-b2fb304141d6.jpg",
         "moren_mp3": "http://10.23.247.62:8081/lvoice/a3232687-b568-43a4-bc9f-3084544c8cc3.m4a",
         "top_list": [{
             "uuid": "1512224322777",

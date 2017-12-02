@@ -2,7 +2,7 @@
 	<transition name="sideUp">
 		<div class="content" ref="content" v-show="showMenu">
 			<p class="title">
-				{{menuList.title}}
+				{{menuList.biaoti_cn}}
 			</p>
 			<type-list v-for="(item, index) in menuList.content" :item="item" :index="index" :key="item.id" :name="item.name" :iconinfo="item.iconinfo" :count="item.count" :bgcolor="item.bgcolor"></type-list>
 		</div>

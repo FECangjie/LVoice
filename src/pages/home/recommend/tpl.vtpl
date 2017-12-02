@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="recommend-list">
-		<list v-if="tuijian" v-for="(o, i) in tuijian.guest_list" :key="o.uuid" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.jieshao" :item="o"></list @click.stop="showSongSheet(list)">
+		<list v-if="tuijian" v-for="(o, i) in tuijian.guest_list" :key="o.uuid" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoti_cn" :item="o"></list @click.stop="showSongSheet(list)">
 
 	</div>
 </div>

@@ -165,6 +165,24 @@ export default Vue.component('app', {
         setTimeout(function(){
           me.loading = false
         }, 100)
+
+        let data = res.data
+        let list = []
+        let obj = {}
+        obj = {
+          url: data.moren_mp3,
+          tupian_url: data.moren_tupian,
+          zhubo_name: data.moren_name,
+          biaoti: data.moren_cn,
+        }
+        // 把所有的音乐数据给vuex的musicAllList
+        store.dispatch('set_Voice', {uuid: data.moren_id, show: false})
+        // store.dispatch('set_MusicList', {list: [obj]})
+        // 所有的数据存起来  包括音乐个人信息 等等
+        store.dispatch('set_AllInfo', res.data)
+        // 设置音乐的地址  初始化 根据vuex的currentIndex来决定
+        this.$refs.audio && this.$refs.audio.setAttribute('src',data.moren_mp3 || store.getters.getCurrentMusic.mp3_url || store.getters.getCurrentMusic.url)
+
         store.dispatch('set_TuijianList', res.data)
         // 给audio元素存在vuex 的state里面  方便日后调用
         store.dispatch('set_AudioElement', this.$refs.audio)
