@@ -6,7 +6,7 @@ import Recommend from './pages/home/recommend'
 import category from './pages/home/category'
 import listPage from './pages/list'
 import ErrorPage from './pages/error'
-import nice from './pages/nice'
+import nice from './pages/home/nice'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
