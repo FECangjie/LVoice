@@ -125,34 +125,34 @@ export default Vue.component('app', {
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
-    axios.get(LocalAPI).then((res) => {
-      if (res.data && res.data.music) {
-        // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
-        this.info = res.data.user
-        // 把所有的音乐数据给vuex的musicAllList
-        store.dispatch('set_MusicAllList', res.data.music)
-        // 所有的数据存起来  包括音乐个人信息 等等
-        store.dispatch('set_AllInfo', res.data)
-        // 设置音乐的地址  初始化 根据vuex的currentIndex来决定
-        this.$refs.audio && this.$refs.audio.setAttribute('src', store.getters.getCurrentMusic.url)
-        // 给audio元素存在vuex 的state里面  方便日后调用
-        store.dispatch('set_AudioElement', this.$refs.audio)
-      } else {
-        MessageBox.alert('未找到音频信息～', '提示').then(() => {
-          store.commit('setErrorMsg',{
-            errorMsg: '抱歉，未找到音频信息～'
-          })
-          router.push('/error')
-        })
-      }
-    }, (err) => {
-        MessageBox.alert(err, '请求失败').then(() => {
-        store.commit('setErrorMsg',{
-          errorMsg: '网络出错啦～'
-        })
-        router.push('/error')
-      })
-    })
+    // axios.get(LocalAPI).then((res) => {
+    //   if (res.data && res.data.music) {
+    //     // data.user的信息赋值给info  再通过组件的数据传递传给sideBar
+    //     this.info = res.data.user
+    //     // 把所有的音乐数据给vuex的musicAllList
+    //     store.dispatch('set_MusicAllList', res.data.music)
+    //     // 所有的数据存起来  包括音乐个人信息 等等
+    //     store.dispatch('set_AllInfo', res.data)
+    //     // 设置音乐的地址  初始化 根据vuex的currentIndex来决定
+    //     this.$refs.audio && this.$refs.audio.setAttribute('src', store.getters.getCurrentMusic.url)
+    //     // 给audio元素存在vuex 的state里面  方便日后调用
+    //     store.dispatch('set_AudioElement', this.$refs.audio)
+    //   } else {
+    //     MessageBox.alert('未找到音频信息～', '提示').then(() => {
+    //       store.commit('setErrorMsg',{
+    //         errorMsg: '抱歉，未找到音频信息～'
+    //       })
+    //       router.push('/error')
+    //     })
+    //   }
+    // }, (err) => {
+    //     MessageBox.alert(err, '请求失败').then(() => {
+    //     store.commit('setErrorMsg',{
+    //       errorMsg: '网络出错啦～'
+    //     })
+    //     router.push('/error')
+    //   })
+    // })
 
     axios.get(tuijianAPI).then((res) => { // 推荐
         setTimeout(function(){
