@@ -1,6 +1,8 @@
 <transition name="sliderUpHideRight">
 	<div class="musicdetail" v-show="isShowMusicDetail">
-		<div class="filterbg" :style="{backgroundImage : 'url(' + this.getCurrentMusic.img_url + ')', backgroundSize : 'cover', backgroundPosition : 'center center'}">
+		<!-- <div class="filterbg" :style="{backgroundImage : 'url(' + this.getCurrentMusic.img_url + ')', backgroundSize : 'cover', backgroundPosition : 'center center'}"> -->
+		<div class="filterbg">
+
 		</div>
 		<div class="detailcontent">
 			<div class="content-header">
