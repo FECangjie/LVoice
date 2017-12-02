@@ -39,6 +39,7 @@ import './assets/styles/index.css'
     scale = 1 / setDpr;
 
     if (!viewport) {
+      debugger
         viewport = doc.createElement('meta');
         viewport.setAttribute('name', 'viewport');
         viewport.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=' + 'no, uc-fitscreen=yes');
@@ -53,10 +54,9 @@ import './assets/styles/index.css'
 
     } else {
         // 如果页面已经设置了viewport，则对viewport进行更改
-        viewport.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no, uc-fitscreen=yes');
+        // viewport.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no, uc-fitscreen=yes');
     }
-    rootEle.setAttribute('style', 'font-size: ' + 16 * setDpr + 'px;');
-
+    rootEle.setAttribute('style', 'font-size: ' + 8 * setDpr + 'px;');
     window.DPR = setDpr;
 
 })(window, window.document);

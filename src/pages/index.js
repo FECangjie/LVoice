@@ -127,7 +127,7 @@ export default Vue.component('app', {
   created () {
     let me = this
     let LocalAPI = '/data.json'
-    let tuijianAPI = host() + '/tuijian.json'
+    let tuijianAPI = host() + '/voice/tuijian.json'
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
