@@ -55,6 +55,9 @@ export default Vue.component('board', {
         showVoice(e) { // 点击播放
           let target = e.target
           store.dispatch('set_Voice',{uuid: target.getAttribute('uuid')})
+        },
+        formartTime (time) {
+          return moment(this.time).format('YYYY-MM-DD')
         }
     },
     computed: {

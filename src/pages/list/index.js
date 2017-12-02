@@ -54,6 +54,9 @@ export default Vue.component('list', {
       const index = this.swiperIndex
       let target = e.target
       let dom = $(target).parent().parent().parent()
+      if (dom.attr('class') == 'right flex-box') {
+        dom = dom.parent()
+      }
       let a  = dom.find('.findsheetlist')
       if (a.length) {
         dom = a

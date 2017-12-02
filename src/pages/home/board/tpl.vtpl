@@ -13,7 +13,7 @@
         <p class="title" v-if="showbottomtitle">{{item.pindao_biaoti}}</p>
         <div class="footnote flex-box">
             <p class="from">{{item.user_name}}</p>
-            <p class="publish-time">{{item.gmtCreate}}</p>
+            <p class="publish-time">{{formartTime(item.gmtCreate)}}</p>
         </div>
     </div>
 </div>
