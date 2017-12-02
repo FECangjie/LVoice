@@ -46,9 +46,7 @@ module.exports = {
 	devtool: '#source-map',
 	plugins: (module.exports.plugins || []).concat([
 			new webpack.DefinePlugin({
-					'process.env': {
-							NODE_ENV: '"production"'
-					}
+					'process.env': '"prod"'
 			}),
 			new webpack.optimize.UglifyJsPlugin({
 				compressor: {

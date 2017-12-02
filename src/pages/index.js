@@ -21,6 +21,10 @@ import mymusic from 'components/header'
 import musicdetail from 'components/header'
 import songsheet from 'components/header'
 
+import host from 'common/host'
+
+window.env = location.port == '8080' ? 'dev' : 'prod'
+
 let musicLrcIndex = 0 // 播放控制
 
 export default Vue.component('app', {
@@ -123,7 +127,7 @@ export default Vue.component('app', {
   created () {
     let me = this
     let LocalAPI = '/data.json'
-    let tuijianAPI = '/tuijian.json'
+    let tuijianAPI = host() + '/tuijian.json'
     if (window.location.pathname.indexOf('error') > -1) {
       return
     }
