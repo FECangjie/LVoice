@@ -53,10 +53,12 @@ export default Vue.component('list', {
     showVolice(e) { // 点击播放
       const index = this.swiperIndex
       let target = e.target
-      let list = JSON.parse(target.getAttribute('songlist'))
+      let dom = $(target).parent().parent()
+      debugger
+      let list = JSON.parse(dom[0].getAttribute('songlist'))
       console.log('--------播放详情--------')
       console.log(list)
-      store.dispatch('set_Voice',{id: 123})
+      store.dispatch('set_Voice',{uuid: list.uuid})
 
     }
   },
@@ -64,6 +66,9 @@ export default Vue.component('list', {
     formartTopRight () {
       const numberInfo = Number(this.toprighttitle)
       return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
+    },
+    formartTime () {
+      return moment(this.time).format('YYYY-MM-DD')
     }
   },
   template: tpl

@@ -76,7 +76,7 @@ export default Vue.component('home', {
         let list = JSON.parse(swiper[0].getAttribute('songlist'))
         console.log('--------播放详情--------')
         console.log(list)
-        store.dispatch('set_Voice',{id: 123})
+        store.dispatch('set_Voice',{uuid: list.uuid})
 
       },
       swiperChange(index) { // 轮播图切换
@@ -88,7 +88,7 @@ export default Vue.component('home', {
         let list = JSON.parse(target.getAttribute('songlist'))
         console.log('--------播放详情--------')
         console.log(list)
-        store.dispatch('set_Voice',{id: 123})
+        store.dispatch('set_Voice',{uuid: list.uuid})
 
       }
     },

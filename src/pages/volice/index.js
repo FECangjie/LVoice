@@ -60,7 +60,7 @@ export default Vue.component('volice', {
       let list = JSON.parse(target.getAttribute('songlist'))
       console.log('--------播放详情--------')
       console.log(list)
-      store.dispatch('set_Voice',{id: 123})
+      store.dispatch('set_Voice',{uuid: list.uuid})
 
     }
   },
