@@ -1,8 +1,14 @@
-<div class="category" :style="{}" >
-	<div class="content">
-		<div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
-		<span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{formartTopRight}}</span>
-		<span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
-	</div>
-	<div class="title" v-if="showbottomtitle">{{bottomtitle}}</div>
+<div class="category" :style="{}">
+    <ul class="list" v-for="item in list">
+        <li class="item">
+            <div class="title"><span>{{item.title}}</span></div>
+            <ul class="">
+                <li class="subitem" v-for="subitem in item.subitem">
+                    <a :href="subitem.jumplink" title="跳转分类详情">
+                        <i :class="subitem.iconName"></i>{{subitem.subtitle}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>
