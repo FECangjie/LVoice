@@ -7,7 +7,7 @@
 				<div class="menu-list-div">推荐</div>
 			</router-link>
 			<router-link class="menu-list" tag="div" to="/lvoice/nice">
-				<div class="menu-list-div">精品</div>
+				<div class="menu-list-div">优选</div>
 			</router-link>
 			<router-link class="menu-list" tag="div" to="/lvoice/now">
 				<div class="menu-list-div">直播</div>

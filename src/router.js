@@ -33,6 +33,10 @@ export const router = new VueRouter({
                 {
                     path: '/lvoice/category',
                     component: category
+                },
+                {
+                    path: '/lvoice/nice',
+                    component: nice
                 }
             ]
         },
@@ -43,10 +47,6 @@ export const router = new VueRouter({
         {
             path: '/error',
             component: ErrorPage
-        },
-        {
-            path: '/lvoice/nice',
-            component: nice
         }
     ]
 })
