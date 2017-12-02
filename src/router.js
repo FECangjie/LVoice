@@ -3,9 +3,9 @@ import Vue from 'vue'
 
 import homePage from './pages/home'
 import Recommend from './pages/home/recommend'
+import category from './pages/home/category'
 import listPage from './pages/list'
 import ErrorPage from './pages/error'
-import category from './pages/category'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -29,7 +29,12 @@ export const router = new VueRouter({
             {
               path: '/lvoice/recommend',
               component: Recommend
-          }]
+            },
+            {
+              path: '/lvoice/category',
+              component: category
+            }
+        ]
       },
       {
           path:'/list',
@@ -38,10 +43,6 @@ export const router = new VueRouter({
       {
           path:'/error',
           component: ErrorPage
-      },
-      {
-          path: '/lvoice/category',
-          component: category
       }
   ]
 })

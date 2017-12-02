@@ -4,9 +4,6 @@
  */
 import Vue from 'vue'
 import './style.less'
-// import musicsheet from '../musicsheet/musicsheet.vue'
-import typelist from '../typelist'
-// import menulist from '../menulist'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('category', {
