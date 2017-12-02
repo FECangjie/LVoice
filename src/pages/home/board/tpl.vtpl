@@ -1,15 +1,20 @@
-<div class="board flex-box" :style="{}">
-    <div class="first order">1</div>
+<div>
+<div class="board flex-box" :style="{}" v-for="(item, i) in list">
+    <div class="first order" v-if="i == 0">1</div>
+    <div class="second order" v-if="i == 1">2</div>
+    <div class="third order" v-if="i == 2">3</div>
+    <div class="order" v-if="i > 2">{{i + 1}}</div>
     <div class="content">
-        <div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
-        <span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{formartTopRight}}</span>
+        <div class="image" :style="{ backgroundImage : 'url('+item.tupian_url+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
+        <span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{item.click_count}}</span>
         <span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
     </div>
     <div class="right flex-box">
-        <p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
+        <p class="title" v-if="showbottomtitle">{{item.pindao_biaoti}}</p>
         <div class="footnote flex-box">
-            <p class="from">你大爷</p>
-            <p class="publish-time">2017-10-1</p>
+            <p class="from">{{item.user_name}}</p>
+            <p class="publish-time">{{item.gmtCreate}}</p>
         </div>
     </div>
+</div>
 </div>

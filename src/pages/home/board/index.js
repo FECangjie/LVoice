@@ -3,10 +3,17 @@
  * @author: yanfangyao01@lianjia.com
  */
 import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from 'axios'
 import './style.less'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('board', {
+    data() {
+        return {
+            list: []
+        }
+    },
     props: {
         listpadding: {
             type: String,
@@ -27,7 +34,7 @@ export default Vue.component('board', {
         },
         showbottomtips: {
             type: Boolean,
-            default: true
+            default: false
         },
         bottomtips: {
             type: String
@@ -48,6 +55,15 @@ export default Vue.component('board', {
             const numberInfo = Number(this.toprighttitle)
             return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
         }
+    },
+    created() {
+        let api = 'http://172.30.13.76:12101/voice/rank_list'
+        axios.get(api, {}).then((res) => {
+            if (res.data) {
+                this.list = res.data.fenlei_list;
+                console.log(this.list);
+            }
+        })
     },
     template: tpl
 })
