@@ -6,7 +6,7 @@ import Vue from 'vue'
 import './style.less'
 import tpl from './tpl.vtpl'
 
-export default Vue.component('listPage', {
+export default Vue.component('board', {
     props: {
         listpadding: {
             type: String,

@@ -43,7 +43,7 @@ const store = new Vuex.Store({
       commit('setTuijianList', obj)
     },
     set_Voice({ commit }, obj) {
-      const bofangAPI = host() + '/api/play.json'
+      const bofangAPI = '/bofang.json'
       axios.get(bofangAPI, {params:obj}).then((res) => { // 播放信息
         if (res.data) {
           let list = res.data
