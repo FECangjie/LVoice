@@ -53,15 +53,15 @@ export default Vue.component('voice-play-list', {
       let className = ''
       switch (playType) {
         case 1:
-          className = 'icon-music-shunxu'
+          className = 'icon1-music-shunxu'
           this.typeName = '列表循环'
           break
         case 2:
-          className = 'icon-music-danqu1'
+          className = 'icon1-music-danqu1'
           this.typeName = '单曲循环'
           break
         case 3:
-          className = 'icon-music-random'
+          className = 'icon1-music-random'
           this.typeName = '随机播放'
           break
         default:

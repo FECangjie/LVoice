@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'icomoon';
+  font-family: 'icomoon1';
   src:  url('fonts/icomoon.eot?mstbet');
   src:  url('fonts/icomoon.eot?mstbet#iefix') format('embedded-opentype'),
     url('fonts/icomoon.ttf?mstbet') format('truetype'),
@@ -9,9 +9,9 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon1-"], [class*=" icon1-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'icomoon1' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,150 +24,150 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-playdetail:before {
+.icon1-playdetail:before {
   content: "\e925";
 }
-.icon-pause-detail:before {
+.icon1-pause-detail:before {
   content: "\e926";
 }
-.icon-prevdetail:before {
+.icon1-prevdetail:before {
   content: "\e927";
 }
-.icon-nextdetail:before {
+.icon1-nextdetail:before {
   content: "\e928";
 }
-.icon-music-shunxu:before {
+.icon1-music-shunxu:before {
   content: "\e929";
 }
-.icon-back:before {
+.icon1-back:before {
   content: "\e924";
 }
-.icon-edit-paper:before {
+.icon1-edit-paper:before {
   content: "\e900";
 }
-.icon-edit:before {
+.icon1-edit:before {
   content: "\e91b";
 }
-.icon-delete:before {
+.icon1-delete:before {
   content: "\e923";
 }
-.icon-add-project:before {
+.icon1-add-project:before {
   content: "\e913";
 }
-.icon-add:before {
+.icon1-add:before {
   content: "\e921";
 }
-.icon-list-music:before {
+.icon1-list-music:before {
   content: "\e91d";
 }
-.icon-night:before {
+.icon1-night:before {
   content: "\e91e";
 }
-.icon-day:before {
+.icon1-day:before {
   content: "\e91f";
 }
-.icon-community:before {
+.icon1-community:before {
   content: "\e920";
 }
-.icon-wangyi:before {
+.icon1-wangyi:before {
   content: "\e90e";
 }
-.icon-share:before {
+.icon1-share:before {
   content: "\e90f";
 }
-.icon-play:before {
+.icon1-play:before {
   content: "\e910";
 }
-.icon-list-circle:before {
+.icon1-list-circle:before {
   content: "\e911";
 }
-.icon-setting:before {
+.icon1-setting:before {
   content: "\e914";
 }
-.icon-theme:before {
+.icon1-theme:before {
   content: "\e915";
 }
-.icon-friend:before {
+.icon1-friend:before {
   content: "\e916";
 }
-.icon-set-time:before {
+.icon1-set-time:before {
   content: "\e917";
 }
-.icon-lock:before {
+.icon1-lock:before {
   content: "\e918";
 }
-.icon-car:before {
+.icon1-car:before {
   content: "\e919";
 }
-.icon-cloud:before {
+.icon1-cloud:before {
   content: "\e91a";
 }
-.icon-exit:before {
+.icon1-exit:before {
   content: "\e91c";
 }
-.icon-place:before {
+.icon1-place:before {
   content: "\e909";
 }
-.icon-SHARE2:before {
+.icon1-SHARE2:before {
   content: "\e90a";
 }
-.icon-zuijinplay:before {
+.icon1-zuijinplay:before {
   content: "\e90b";
 }
-.icon-diantai:before {
+.icon1-diantai:before {
   content: "\e90c";
 }
-.icon-collect:before {
+.icon1-collect:before {
   content: "\e90d";
 }
-.icon-coin:before {
+.icon1-coin:before {
   content: "\e908";
 }
-.icon-market:before {
+.icon1-market:before {
   content: "\e901";
 }
-.icon-menu:before {
+.icon1-menu:before {
   content: "\e902";
 }
-.icon-message:before {
+.icon1-message:before {
   content: "\e903";
 }
-.icon-music:before {
+.icon1-music:before {
   content: "\e904";
 }
-.icon-search:before {
+.icon1-search:before {
   content: "\e905";
 }
-.icon-vip:before {
+.icon1-vip:before {
   content: "\e906";
 }
-.icon-wangyiyun:before {
+.icon1-wangyiyun:before {
   content: "\e907";
 }
-.icon-close:before {
+.icon1-close:before {
   content: "\e912";
 }
-.icon-down:before {
+.icon1-down:before {
   content: "\e922";
 }
-.icon-left:before {
+.icon1-left:before {
   content: "\e940";
 }
-.icon-pause:before {
+.icon1-pause:before {
   content: "\e955";
 }
-.icon-right:before {
+.icon1-right:before {
   content: "\e963";
 }
-.icon-up:before {
+.icon1-up:before {
   content: "\e978";
 }
-.icon-music-danqu1:before {
+.icon1-music-danqu1:before {
   content: "\e94a";
 }
-.icon-music-random:before {
+.icon1-music-random:before {
   content: "\e94b";
 }
-.icon-volume-medium:before {
+.icon1-volume-medium:before {
   content: "\ea27";
 }

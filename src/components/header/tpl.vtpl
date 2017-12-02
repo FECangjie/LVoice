@@ -1,9 +1,9 @@
 <div class="header">
   <div class="header-warpper">
-    <!-- <i class="menu icon-menu" @click=""></i> -->
+    <!-- <i class="menu icon1-menu" @click=""></i> -->
 
     <!-- <router-link tag="i" to="/search"> -->
-      <i class="search icon-search"></i>
+      <i class="search icon1-search"></i>
     <!-- </router-link> -->
     <!-- <Counter class="counter"></Counter> -->
   </div>

@@ -18,7 +18,7 @@
 
   <div v-if="loading" class="loading">
     <div class="content">
-      <i class="icon-music icon-type"></i>
+      <i class="icon1-music icon1-type"></i>
       <span>{{ msg }}</span>
     </div>
   </div>

@@ -4,6 +4,6 @@
     <span class="name">{{listName}}</span>
     <span class="count" v-show="showCount">({{listCount}})</span>
     <p v-if="showBorder" class="border-1px"></p>
-    <i v-if="isPlaying" class="isPlaying icon-volume-medium"></i>
+    <i v-if="isPlaying" class="isPlaying icon1-volume-medium"></i>
   </div>
 </div>

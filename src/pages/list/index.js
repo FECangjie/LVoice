@@ -45,7 +45,9 @@ export default Vue.component('list', {
       type: String
     },
     item: {
-    }
+    },
+    agent: '',
+    time: ''
   },
   methods: {
     showVolice(e) { // 点击播放

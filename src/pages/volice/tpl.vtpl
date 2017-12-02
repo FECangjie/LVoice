@@ -6,12 +6,12 @@
 		</div>
 		<div class="detailcontent">
 			<div class="content-header">
-				<i class="back icon-back" @click="hideMusicDetail"></i>
+				<i class="back icon1-back" @click="hideMusicDetail"></i>
 				<div class="musicTopDetail">
 					<p class="name">{{getCurrentMusic.biaoti}}</p>
 					<p class="singer">{{getCurrentMusic.zhubo_name}}</p>
 				</div>
-				<i class="share icon-share"></i>
+				<i class="share icon1-share"></i>
 			</div>
 			<transition name="fade">
 				<div class="content-wrapper" v-show="showCD" @click.stop="isShowCD(false)">
@@ -31,10 +31,10 @@
 					</div> -->
 
 					<div class="musicDo">
-						<i class="icon icon-like"></i>
-						<i class="icon icon-download"></i>
-						<i class="icon icon-msg"></i>
-						<i class="icon icon-list-circle-small"></i>
+						<i class="icon icon1-like"></i>
+						<i class="icon icon1-download"></i>
+						<i class="icon icon1-msg"></i>
+						<i class="icon icon1-list-circle-small"></i>
 					</div>
 				</div>
 			</transition>
@@ -77,10 +77,10 @@
 				</div>
 				<div class="musicDetailCtrl">
 					<i class="playType" :class="musicPlayType" @click.stop="setPlayType"></i>
-					<i class="prev icon-prevdetail" @click.stop="playPrev"></i>
-					<i class="playPause" :class="isPlaying ? 'icon-pause-detail' : 'icon-playdetail' " @click.stop="playPause"></i>
-					<i class="next icon-nextdetail" @click.stop="playNext"></i>
-					<i class="menu icon-list-music" @click.stop="showMusicList"></i>
+					<i class="prev icon1-prevdetail" @click.stop="playPrev"></i>
+					<i class="playPause" :class="isPlaying ? 'icon1-pause-detail' : 'icon1-playdetail' " @click.stop="playPause"></i>
+					<i class="next icon1-nextdetail" @click.stop="playNext"></i>
+					<i class="menu icon1-list-music" @click.stop="showMusicList"></i>
 				</div>
 			</div>
 		</div>

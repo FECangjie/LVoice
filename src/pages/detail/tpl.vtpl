@@ -1,7 +1,7 @@
 <div class="detail">
     <div class="detail-list">
         <div class="head">
-            <a class="back icon-left" href="javascript:history.back();"></a>
+            <a class="back icon1-left" href="javascript:history.back();"></a>
             <span>购房置业</span>
         </div>
         <list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn" :item="o"></list @click.stop="showSongSheet(list)">

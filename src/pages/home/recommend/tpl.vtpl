@@ -7,15 +7,15 @@
 	</mt-swipe>
 	<div class="recommend-type">
 		<div class="div-type">
-			<i class="icon-type icon-diantai"></i>
+			<i class="icon1-type icon1-diantai"></i>
 			<p class="title">链家之声</p>
 		</div>
 		<div class="div-type">
-			<i class="icon-type icon-diantai"></i>
+			<i class="icon1-type icon1-diantai"></i>
 			<p class="title">每日推荐</p>
 		</div>
 		<div class="div-type">
-			<i class="icon-type icon-diantai"></i>
+			<i class="icon1-type icon1-diantai"></i>
 			<p class="title">最热讲师</p>
 		</div>
 	</div>

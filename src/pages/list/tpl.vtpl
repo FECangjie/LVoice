@@ -8,8 +8,8 @@
     <div class="right flex-box">
 	   <p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
        <div class="footnote flex-box">
-         <p class="from">你大爷</p>
-         <p class="publish-time">2017-10-1</p>
+         <p class="from">{{agent}}</p>
+         <p class="publish-time">{{time}}</p>
        </div>
     </div>
 </div>

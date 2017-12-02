@@ -80,13 +80,13 @@ export default Vue.component('volice', {
       let className = ''
       switch (playType) {
         case 1:
-          className = 'icon-music-shunxu'
+          className = 'icon1-music-shunxu'
           break
         case 2:
-          className = 'icon-music-danqu1'
+          className = 'icon1-music-danqu1'
           break
         case 3:
-          className = 'icon-music-random'
+          className = 'icon1-music-random'
           break
         default:
           className = ''

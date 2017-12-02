@@ -9,11 +9,11 @@
 				</div>
 				<div class="right">
 					<div class="collect">
-						<i class="icon-add-project"></i>
+						<i class="icon1-add-project"></i>
 						<span>收藏</span>
 					</div>
 					<div class="delete">
-						<i class="icon-delete"></i>
+						<i class="icon1-delete"></i>
 						<span>清空</span>
 					</div>
 				</div>
@@ -22,7 +22,7 @@
 			<ul class="container" ref="musiclistContent">
 				<li class="list" v-for="(item, index) in musiclist" :data-index="index" :class="index === getCurrentIndex ? 'active' : ''" @click.stop="playIndex(index)">
 					<div class="border-1px"></div>
-					<i v-show="index === getCurrentIndex" class="playingicon icon-volume-medium"></i>
+					<i v-show="index === getCurrentIndex" class="playingicon icon1-volume-medium"></i>
 					<span class="name">{{item.biaoti}}</span>
 					<span class="singer"> - {{item.zhubo_name}}</span>
 					<i class="close"></i>

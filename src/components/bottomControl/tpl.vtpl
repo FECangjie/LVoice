@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="playpause" @click.stop="playpause">
-    <i :class="iconPlayPause?'icon-pause':'icon-playdetail'"></i>
+    <i :class="iconPlayPause?'icon1-pause':'icon1-playdetail'"></i>
   </div>
-  <i class="music-list icon-list-music" @click.stop="showMusicList"></i>
+  <i class="music-list icon1-list-music" @click.stop="showMusicList"></i>
 </div>
