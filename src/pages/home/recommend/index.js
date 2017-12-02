@@ -92,7 +92,7 @@ export default Vue.component('home', {
       },
       setType(e) {
         let target = e.target
-        let type = target.innerHTML ? target.innerHTML : target.getAttribute('data-type')
+        let type = target.getAttribute('data-type') ? target.getAttribute('data-type') : target.innerHTML
         store.dispatch('set_Category', { pindao_type: type,key: type})
       }
     },
