@@ -26,7 +26,6 @@ export default Vue.component('home', {
       observeParents: true,
       loop: true,
       onSlideChangeEnd: swiper => {
-        // 这个位置放swiper的回调方法
         this.page = swiper.realIndex + 1
         this.index = swiper.realIndex
       },

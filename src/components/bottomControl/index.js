@@ -51,15 +51,15 @@ export default Vue.component('v-header', {
     },
     // 获取音乐名称
     musicName () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.name : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.biaoti : ''
     },
     // 获取歌手名称
     musicSinger () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.singer : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.zhubo_name : ''
     },
     // 获取音乐封面地址
     musicImage () {
-      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.img_url : ''
+      return this.$store.getters.getCurrentMusic ? this.$store.getters.getCurrentMusic.tupian_url : ''
     },
     // 获取音乐播放地址
     musicUrl () {

@@ -9,6 +9,7 @@ import tpl from './tpl.vtpl'
 import axios from 'axios'
 import store from 'store'
 import range from 'pages/range'
+import list from 'pages/list'
 
 export default Vue.component('volice', {
   data () {
@@ -94,7 +95,10 @@ export default Vue.component('volice', {
     },
     lrcIndex () {
       return this.$store.getters.getLyricIndex ? this.$store.getters.getLyricIndex : 0
-    }
+    },
+    tuijian () {
+      return store.getters.getTuijian || {}
+    },
   },
   watch: {
     isPlay: function (newisPlay, oldisPlay) {
@@ -123,6 +127,7 @@ export default Vue.component('volice', {
     }
   },
   components: {
+    list,
     'range': range // 进度条
   },
   mounted () {

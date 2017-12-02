@@ -59,6 +59,12 @@
 								{{ getCurrentMusic.jieshao }}
 							</div>
 						</div>
+						<div class="tuijian">
+							<span>相关推荐</span>
+							<div class="list">
+								<list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn"></list @click.stop="showSongSheet(list)">
+							</div>
+						</div>
 						<div class="div-lrc" ref="divlrc">
 							<p v-if="getCurrentMusic" v-for="(lrc, index) in getCurrentMusic.lyric" :data-index="index" :class="lrcIndex === index ? 'active musiclrc' : 'musiclrc'" :data-timeid="lrc.timeId">{{lrc === '' ? '暂无歌词' : lrc.text}} </p>
 						</div>
