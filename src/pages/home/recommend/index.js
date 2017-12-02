@@ -52,6 +52,9 @@ export default Vue.component('home', {
       reconmmend () {
         return store.getters.getAllInfo || '暂无数据'
       },
+      tuijian () {
+        return store.getters.getTuijian || {}
+      },
       swiper () {
         return this.$refs.mySwiper.swiper
       }

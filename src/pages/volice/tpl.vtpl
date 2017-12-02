@@ -8,8 +8,8 @@
 			<div class="content-header">
 				<i class="back icon-back" @click="hideMusicDetail"></i>
 				<div class="musicTopDetail">
-					<p class="name">{{getCurrentMusic.name}}</p>
-					<p class="singer">{{getCurrentMusic.singer}}</p>
+					<p class="name">{{getCurrentMusic.biaoti}}</p>
+					<p class="singer">{{getCurrentMusic.zhubo_name}}</p>
 				</div>
 				<i class="share icon-share"></i>
 			</div>
@@ -22,7 +22,7 @@
 						<div class="cd-content" ref="cdcontent">
 							<div class="wrapper" ref="cd" :class="isPlaying ? 'animate ' : ''">
 								<div class="cd-bg"></div>
-								<img class="img" :src="getCurrentMusic.img_url" alt="">
+								<img class="img" :src="getCurrentMusic.tupian_url" alt="">
 							</div>
 						</div>
 					</div>
@@ -45,7 +45,14 @@
 					</div>
 					<div class="lrc" ref="lrc" :scroll-top.prop="scrollTop">
 						<div class="jieshao">
-							<div class="title">
+							<div class="zhuanji">
+								<img class="img" :src="getCurrentMusic.tupian_url" alt="">
+								<div class="title">
+									{{ getCurrentMusic.dingyue_name }}
+								</div>
+							</div>
+
+							<div class="jianjie">
 								家音简介
 							</div>
 							<div class="content">
