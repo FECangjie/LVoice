@@ -3,8 +3,14 @@
  * @author: yanfangyao01@lianjia.com
  */
 import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from 'axios'
+import store from 'store'
 import './style.less'
 import tpl from './tpl.vtpl'
+import { router } from '../../../router'
+
+Vue.use(Vuex)
 
 export default Vue.component('category', {
     data() {
@@ -13,17 +19,14 @@ export default Vue.component('category', {
             list: [{
                     title: '购房',
                     subitem: [{
-                            jumplink: '/lvoice/category/detail/detail',
                             iconName: 'icon-database',
                             subtitle: '投资置业'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-bullhorn',
                             subtitle: '刚需必知'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-shield',
                             subtitle: '换房套路'
                         }
@@ -32,12 +35,10 @@ export default Vue.component('category', {
                 {
                     title: '装修',
                     subitem: [{
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-newspaper',
                             subtitle: '万链专栏'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-pacman',
                             subtitle: '装修大实话'
                         }
@@ -46,23 +47,27 @@ export default Vue.component('category', {
                 {
                     title: '特色',
                     subitem: [{
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-home2',
                             subtitle: '地产知识'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-office',
                             subtitle: '楼市快报'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
                             iconName: 'icon-headphones',
                             subtitle: '马红下班时光'
                         }
                     ]
                 }
             ]
+        }
+    },
+    methods: {
+        sendAjax(evt) {
+            let target = evt.target
+            store.dispatch('set_Category', { pindao_type: target.getAttribute('ajaxParam') })
+            router.push('/lvoice/category/detail');
         }
     },
     computed: {
