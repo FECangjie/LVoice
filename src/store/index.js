@@ -72,6 +72,24 @@ const store = new Vuex.Store({
           router.push('/error')
         })
       })
+    },
+    // 分类页发送ajax请求
+    set_Category({ commit }, obj) {
+      const catlistAPI = 'http://172.30.13.76:12101/voice/fenlei_list'
+      axios.get(catlistAPI, { params: obj }).then((res) => {
+        if (res.data) {
+          console.log('请求成功')
+        } else {
+
+        }
+      }, (err) => {
+         MessageBox.alert(err, '请求失败').then(() => {
+          store.commit('setErrorMsg',{
+            errorMsg: '网络出错啦～'
+          })
+          router.push('/error')
+        })
+      })
     }
   },
 
