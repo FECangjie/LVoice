@@ -64,8 +64,7 @@ const store = new Vuex.Store({
             type: 'setVoiceTuijianList',
             list: res.data.others || []
           })
-
-          if (!!obj.show) {
+          if (!obj.noShow) {
             store.commit({
               type: 'playIndex',
               index: 0

@@ -6,7 +6,9 @@
 		<span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
 	</div>
     <div class="right flex-box">
-	   <p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
+			<div>
+				<p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
+			</div>
        <div class="footnote flex-box">
          <p class="from">{{item.user_name}}</p>
          <p class="publish-time">{{formartTime}}</p>

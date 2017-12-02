@@ -176,7 +176,7 @@ export default Vue.component('app', {
           biaoti: data.moren_cn,
         }
         // 把所有的音乐数据给vuex的musicAllList
-        store.dispatch('set_Voice', {uuid: data.moren_id, show: false})
+        store.dispatch('set_Voice', {uuid: data.moren_id, noShow: true})
         // store.dispatch('set_MusicList', {list: [obj]})
         // 所有的数据存起来  包括音乐个人信息 等等
         store.dispatch('set_AllInfo', res.data)

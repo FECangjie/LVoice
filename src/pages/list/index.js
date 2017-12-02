@@ -53,8 +53,11 @@ export default Vue.component('list', {
     showVolice(e) { // 点击播放
       const index = this.swiperIndex
       let target = e.target
-      let dom = $(target).parent().parent()
-
+      let dom = $(target).parent().parent().parent()
+      let a  = dom.find('.findsheetlist')
+      if (a.length) {
+        dom = a
+      }
       let list = JSON.parse(dom[0].getAttribute('songlist'))
       console.log('--------播放详情--------')
       console.log(list)
