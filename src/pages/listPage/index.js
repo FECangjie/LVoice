@@ -1,14 +1,12 @@
 /**
- * @file: 优选
+ * @file: 单独列表页
  * @author: yanfangyao01@lianjia.com
  */
 import Vue from 'vue'
-import store from 'store'
 import './style.less'
 import tpl from './tpl.vtpl'
-import list from 'pages/listPage'
 
-export default Vue.component('nice', {
+export default Vue.component('listPage', {
     props: {
         listpadding: {
             type: String,
@@ -49,14 +47,7 @@ export default Vue.component('nice', {
         formartTopRight() {
             const numberInfo = Number(this.toprighttitle)
             return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
-        },
-        tuijian () {
-        return store.getters.getTuijian || {}
-      }
-    },
-    components: {
-        list,
-        // findsheettitle
+        }
     },
     template: tpl
 })

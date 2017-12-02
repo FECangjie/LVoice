@@ -4,6 +4,9 @@
  */
 import Vue from 'vue'
 import './style.less'
+// import musicsheet from '../musicsheet/musicsheet.vue'
+import typelist from '../typelist'
+// import menulist from '../menulist'
 import tpl from './tpl.vtpl'
 
 export default Vue.component('category', {
@@ -13,52 +16,60 @@ export default Vue.component('category', {
             list: [{
                     title: '购房',
                     subitem: [{
-                            jumplink: '/lvoice/category/detail/detail',
-                            iconName: 'icon-coin',
-                            subtitle: '投资置业'
-                        },
-                        {
-                            jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
-                            subtitle: '刚需必知'
-                        },
-                        {
-                            jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
-                            subtitle: '换房套路'
-                        }
-                    ]
-                },
-                {
-                    title: '装修',
-                    subitem: [{
-                            jumplink: '/lvoice/category/detail',
+                            jumplink: '/lvoice/category',
                             iconName: 'icon-coin',
                             subtitle: '万链专栏'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
+                            jumplink: '/lvoice/category',
                             iconName: 'icon-coin',
                             subtitle: '装修大实话'
                         }
                     ]
                 },
                 {
+                    title: '装修',
+                    subitem: [{
+                            jumplink: '/lvoice/category',
+                            iconName: 'icon-coin',
+                            subtitle: '贷款'
+                        },
+                        {
+                            jumplink: '/lvoice/category',
+                            iconName: 'icon-coin',
+                            subtitle: '置业'
+                        },
+                        {
+                            jumplink: '/lvoice/category',
+                            iconName: 'icon-coin',
+                            subtitle: '投资'
+                        }, {
+                            jumplink: '/lvoice/category',
+                            iconName: 'icon-coin',
+                            subtitle: '看房'
+                        }
+                    ]
+                },
+                {
                     title: '特色',
                     subitem: [{
-                            jumplink: '/lvoice/category/detail',
+                            jumplink: '/lvoice/category',
                             iconName: 'icon-coin',
-                            subtitle: '地产知识'
+                            subtitle: '贷款'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
+                            jumplink: '/lvoice/category',
                             iconName: 'icon-coin',
-                            subtitle: '楼市快报'
+                            subtitle: '置业'
                         },
                         {
-                            jumplink: '/lvoice/category/detail',
+                            jumplink: '/lvoice/category',
                             iconName: 'icon-coin',
-                            subtitle: '马红下班时光'
+                            subtitle: '投资'
+                        }, {
+                            jumplink: '/lvoice/category',
+                            iconName: 'icon-coin',
+                            subtitle: '看房'
                         }
                     ]
                 }

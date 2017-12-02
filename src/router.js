@@ -7,6 +7,7 @@ import category from './pages/home/category'
 import listPage from './pages/list'
 import ErrorPage from './pages/error'
 import nice from './pages/home/nice'
+import listPage2 from './pages/listPage'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -47,6 +48,10 @@ export const router = new VueRouter({
         {
             path: '/error',
             component: ErrorPage
+        },
+        {
+            path: '/lvoice/now',
+            component: listPage2
         }
     ]
 })
