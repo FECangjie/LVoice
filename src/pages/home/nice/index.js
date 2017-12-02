@@ -50,13 +50,15 @@ export default Vue.component('nice', {
             const numberInfo = Number(this.toprighttitle)
             return numberInfo > 10000 ? `${Math.floor(numberInfo / 10000)}万` : numberInfo
         },
-        tuijian () {
-        return store.getters.getTuijian || {}
-      }
+        list () {
+          return this.$store.getters.getTypeList || []
+        },
+        key() {
+          return this.$store.getters.getKey || ''
+        }
     },
     components: {
         list,
-        // findsheettitle
     },
     template: tpl
 })

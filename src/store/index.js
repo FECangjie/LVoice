@@ -8,6 +8,7 @@ import MenuList from './modules/menulist.js'
 import MusicList from './modules/musiclist.js'
 import Reconmmed from './modules/reconmmend.js'
 import host from 'common/host'
+import { router } from '../router.js'
 
 Vue.use(Vuex)
 
@@ -17,14 +18,18 @@ const store = new Vuex.Store({
     errorMsg: '',
 
     tuijian: [],
-    voiceTuijian: []
+    voiceTuijian: [],
+    typeList: [],
+    key: '优先筛选您的最爱，快去筛选吧～'
   },
   getters: {
     getAllInfo: state => state.allInfo,
     getTuijian: state => state.tuijian,
     getVoiceTuijian: state => state.voiceTuijian,
     // 获取推荐歌单信息
-    getFindMusic: state => state.musicAllList.findmusic
+    getFindMusic: state => state.musicAllList.findmusic,
+    getTypeList: state => state.typeList,
+    getKey: state => state.key
   },
   mutations: {
     setAllInfo (state, obj) {
@@ -38,7 +43,14 @@ const store = new Vuex.Store({
     },
     setVoiceTuijianList(state, obj) {
       state.voiceTuijian = obj
-    }
+    },
+    // 列表信息
+		setTypeList (state, obj) {
+			state.typeList = obj.list
+		},
+    setKey (state, obj) {
+			state.key = obj.key
+		}
   },
   actions: {
     set_AllInfo ({ commit }, obj) {
@@ -90,9 +102,17 @@ const store = new Vuex.Store({
     // 分类页发送ajax请求
     set_Category({ commit }, obj) {
       const catlistAPI = host() + '/voice/fenlei_list.json'
-      axios.get(catlistAPI, { params: obj }).then((res) => {
+      axios.get(catlistAPI, { params: {pindao_type: obj.pindao_type} }).then((res) => {
         if (res.data) {
-          console.log(res.data)
+          store.commit({
+            type: 'setTypeList',
+            list: res.data.fenlei_list || []
+          })
+          store.commit({
+            type: 'setKey',
+            key: obj.key
+          })
+          router.push('/lvoice/nice');
         } else {
 
         }

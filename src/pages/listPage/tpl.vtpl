@@ -1,14 +1,18 @@
-<div class="listPage flex-box" :style="{}">
-    <div class="content">
-        <div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
-        <span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{formartTopRight}}</span>
-        <span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
-    </div>
+<div class="findsheetlist flex-box" :style="{}" :songlist="JSON.stringify(item)" @click="showVolice">
+	<div class="content">
+		<!-- <img class="image" :src="imagesrc" alt=""> -->
+		<div class="image" :style="{ backgroundImage : 'url('+imagesrc+')',backgroundSize:'cover', backgroundPosition:'center'}"></div>
+		<!-- <span class="toprighttips" v-if="showtoprighttips"><i class="icon" :class="toprighticonclass"></i>{{formartTopRight}}</span> -->
+		<span class="bottomtips" v-if="showbottomtips">{{bottomtips}}</span>
+	</div>
     <div class="right flex-box">
-        <p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
-        <div class="footnote flex-box">
-            <p class="from">你大爷</p>
-            <p class="publish-time">2017-10-1</p>
-        </div>
+			<div>
+				<p class="title" v-if="showbottomtitle">{{bottomtitle}}</p>
+			</div>
+       <div class="footnote flex-box">
+				 <p class="from">{{item.user_name}}</p>
+				 <p class="bofang"><i class="icon-play3"></i>{{formartTopRight}}</p>
+         <p class="publish-time">{{formartTime}}</p>
+       </div>
     </div>
 </div>

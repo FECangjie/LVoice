@@ -6,21 +6,21 @@
 	  </mt-swipe-item>
 	</mt-swipe>
 	<div class="recommend-type">
-		<div class="div-type">
-			<i class="icon1-type icon1-diantai"></i>
+		<div class="div-type" @click="setType">
+			<i class="icon1-type icon1-diantai" data-type="链家之声"></i>
 			<p class="title">链家之声</p>
 		</div>
-		<div class="div-type">
-			<i class="icon1-type icon1-diantai"></i>
+		<div class="div-type" @click="setType">
+			<i class="icon-bullhorn" data-type="每日推荐"></i>
 			<p class="title">每日推荐</p>
 		</div>
-		<div class="div-type">
-			<i class="icon1-type icon1-diantai"></i>
+		<div class="div-type" @click="setType">
+			<i class="icon-users" data-type="最热讲师"></i>
 			<p class="title">最热讲师</p>
 		</div>
 	</div>
 	<div class="recommend-list">
-		<list v-if="tuijian" v-for="(o, i) in tuijian.guest_list" :key="o.uuid" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoti_cn" :item="o"></list @click.stop="showSongSheet(list)">
+		<list v-if="tuijian" v-for="(o, i) in tuijian.guest_list" :key="o.uuid" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoti_cn" :item="o"></list>
 
 	</div>
 </div>

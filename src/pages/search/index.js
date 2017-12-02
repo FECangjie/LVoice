@@ -20,9 +20,9 @@ export default Vue.component('menu-play-list', {
     stopTouch (event) {
       return
     },
-    hideMenuList () {
+    hideSearch () {
       store.dispatch({
-        type: 'hideMenuList'
+        type: 'hide_Search'
       })
     }
   },
@@ -31,7 +31,9 @@ export default Vue.component('menu-play-list', {
       this.isShow = this.$store.getters.getIsShow ? this.$store.getters.getIsShow : false
       return this.$store.getters.getIsShow ? this.$store.getters.getIsShow : false
     },
-
+    showSearch () {
+      return this.$store.getters.getIsShowSearch ? this.$store.getters.getIsShowSearch : false
+    },
     menuList () {
       return this.$store.getters.getShowMenuInfo ? this.$store.getters.getShowMenuInfo : ''
     }

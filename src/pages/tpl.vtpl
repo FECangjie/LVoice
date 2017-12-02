@@ -12,6 +12,7 @@
   <bottom-bar></bottom-bar>
   <!-- 音乐播放详情  显示cd页 -->
   <music-detail></music-detail>
+  <search-detail></search-detail>
   <!-- 歌单详情页 -->
   <!-- <song-sheet></song-sheet> -->
   <router-view></router-view>

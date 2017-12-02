@@ -1,6 +1,9 @@
 <div class="nice">
     <div class="nice-list">
-        <div class="nice-cat">购房置业</div>
-        <list v-if="tuijian" v-for="(o, i) in tuijian.jiugongge_list" :key="" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoqian_cn" :item="o"></list @click.stop="showSongSheet(list)">
+        <div class="nice-cat">{{key}}</div>
+        <list v-if="list" v-for="(o, i) in list" :key="o.uuid" :imagesrc="o.tupian_url" :showtoprighttips="true" :toprighttitle="o.click_count" :showbottomtips="false" :bottomtips="''" :showbottomtitle="true" :bottomtitle="o.biaoti_cn" :item="o"></list @click.stop="showSongSheet(list)">
+        <div class="fail" v-if="!list" >
+          暂无数据
+        </div>
     </div>
 </div>

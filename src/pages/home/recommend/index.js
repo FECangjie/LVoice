@@ -89,7 +89,11 @@ export default Vue.component('home', {
         console.log('--------播放详情--------')
         console.log(list)
         store.dispatch('set_Voice',{uuid: list.uuid})
-
+      },
+      setType(e) {
+        let target = e.target
+        let type = target.innerHTML ? target.innerHTML : target.getAttribute('data-type')
+        store.dispatch('set_Category', { pindao_type: type,key: type})
       }
     },
   mounted () {

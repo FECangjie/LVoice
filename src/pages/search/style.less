@@ -1,0 +1,49 @@
+.searchwrap {
+  font-size:0.75rem;
+  .search-page {
+    position: fixed;
+    height: 13.625rem;
+    background: #fff;
+    top: 3.125rem;
+    left: 0;
+    right: 0;
+    z-index: 23;
+    padding: 2rem;
+    border-bottom: 1px solid #c3dada;
+    &.sideDown-enter-to,&.sideDown-leave-to {
+      transition: transform 0.3s;
+    }
+    &.sideDown-enter,&.sideDown-leave-to {
+      transform:translate3d(0,-100%,0);
+    }
+    .title {
+      text-align: center;
+      color: #36a765;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      i {
+        margin-right: .5rem;
+      }
+    }
+    .content {
+      font-size: 1rem;
+    }
+  }
+
+  .mask {
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:15;
+    opacity:1;
+    background:$maskBackground;
+    &.fade-enter-to,&.fade-leave-to {
+      transition: all 0.3s;
+    }
+    &.fade-enter,&.fade-leave-to {
+      opacity:0;
+    }
+  }
+}

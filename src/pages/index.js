@@ -15,6 +15,7 @@ import bottombar from 'components/bottomControl'
 import voicedetail from 'pages/volice'
 import menulist from 'pages/menulist'
 import musiclist from 'pages/volice/musiclist'
+import searchdetail from 'pages/search'
 
 import sidebar from 'components/header'
 import mymusic from 'components/header'
@@ -122,6 +123,7 @@ export default Vue.component('app', {
     'menu-list': menulist,
     'music-list': musiclist,
     'music-detail': voicedetail,
+    'search-detail': searchdetail
     // 'song-sheet': songsheet
   },
   created () {

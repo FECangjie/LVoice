@@ -9,7 +9,7 @@ import tpl from './tpl.vtpl'
 import axios from 'axios'
 import store from 'store'
 import range from 'pages/range'
-import list from 'pages/list'
+import list from 'pages/listPage'
 
 export default Vue.component('volice', {
   data () {

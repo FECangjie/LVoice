@@ -26,8 +26,21 @@ export default Vue.component('v-header', {
       isShowMenu: this.showMenu
     }
   },
-
+  computed: {
+  },
   methods: {
+    stopTouch (event) {
+      return
+    },
+    // 显示播放列表
+    showSearch () {
+      let scrollTop = (this.$store.getters.getCurrentIndex + 1 - 3) * 42
+      store.dispatch({
+        type: 'set_ScrollTop',
+        scrollTop: scrollTop
+      })
+      store.dispatch('show_Search')
+    },
     // showMueu () {
     //   store.dispatch({
     //     type: 'showSideBar'

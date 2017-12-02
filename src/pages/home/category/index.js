@@ -66,8 +66,7 @@ export default Vue.component('category', {
     methods: {
         sendAjax(evt) {
             let target = evt.target
-            store.dispatch('set_Category', { pindao_type: target.getAttribute('ajaxParam') })
-            router.push('/lvoice/category/detail');
+            store.dispatch('set_Category', { pindao_type: target.getAttribute('ajaxParam'),key: target.getAttribute('ajaxParam')})
         }
     },
     computed: {
