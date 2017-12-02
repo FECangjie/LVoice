@@ -14,17 +14,17 @@ export default Vue.component('category', {
                     title: '购房',
                     subitem: [{
                             jumplink: '/lvoice/category/detail/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-database',
                             subtitle: '投资置业'
                         },
                         {
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-bullhorn',
                             subtitle: '刚需必知'
                         },
                         {
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-shield',
                             subtitle: '换房套路'
                         }
                     ]
@@ -33,12 +33,12 @@ export default Vue.component('category', {
                     title: '装修',
                     subitem: [{
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-newspaper',
                             subtitle: '万链专栏'
                         },
                         {
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-pacman',
                             subtitle: '装修大实话'
                         }
                     ]
@@ -47,17 +47,17 @@ export default Vue.component('category', {
                     title: '特色',
                     subitem: [{
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-home2',
                             subtitle: '地产知识'
                         },
                         {
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-office',
                             subtitle: '楼市快报'
                         },
                         {
                             jumplink: '/lvoice/category/detail',
-                            iconName: 'icon-coin',
+                            iconName: 'icon-headphones',
                             subtitle: '马红下班时光'
                         }
                     ]
