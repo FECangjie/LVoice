@@ -3,7 +3,7 @@
 		<div class="search-page" v-show="showSearch">
 			<div class="title"><i class="icon-music"></i>搜音 链你所恋</div>
 			<div class="content">
-				不知道这个做展示用没做什么实际功能其实是没做完的页面会不会影响我们组全体成员矜矜业业熬夜做出来的成绩不管了我先睡了
+				不知道这个做展示用没做什么实际功能其实是没做完的页面会不会影响我们组全体成员矜矜业业熬夜做出来的成绩不管了睡不睡了
 			</div>
 		</div>
 	</transition>

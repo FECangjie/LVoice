@@ -70,7 +70,7 @@ const store = new Vuex.Store({
           list.url = list.mp3_url
           store.commit({
             type: 'setMusicList',
-            list: [list]
+            list: list
           })
           store.commit({
             type: 'setVoiceTuijianList',

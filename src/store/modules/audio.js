@@ -88,7 +88,6 @@ const audioInfo = {
 		// play设置
 		play (state) {
 			state.playing = true
-
 			state.audioelement.play()
 		},
 		// 暂停设置
@@ -119,8 +118,7 @@ const audioInfo = {
 		},
 		// 插入播放列表信息
 		setMusicList (state, obj) {
-
-			state.musicList = obj.list
+			state.musicList.unshift(obj.list)
 		},
 		// 插入所有音乐信息
 		setMusicAllList (state, obj) {
