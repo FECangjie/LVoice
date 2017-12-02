@@ -29,7 +29,7 @@
     right:0;
     z-index:16;
     // filter: url(../../common/blur.svg#blur);
-    filter:blur(30px);
+    filter:blur(1.875rem);
     background-color: #fff;
   }
 
@@ -54,16 +54,16 @@
       align-items:center;
       // background:red
       .back,.share {
-        width:50px;
-        flex:0 0 50px;
+        width:3.125rem;
+        flex:0 0 3.125rem;
         height:8vh;
         color:#323232;
-        font-size:24px;
+        font-size:1.5rem;
         line-height:8vh;
         text-align:center;
       }
       .share {
-        font-size:32px;
+        font-size:2.0rem;
       }
       .musicTopDetail {
         flex:1 1 auto;
@@ -71,18 +71,18 @@
         flex-direction:column;
         justify-content:center;
         color:#36a765;
-        width:calc(100% - 100px);
+        width:calc(100% - 6.25rem);
         .singer,.name {
           margin:0;
           color:#323232;
-          font-size:12px;
-          padding:4px 0;
+          font-size:0.75rem;
+          padding:0.25rem 0;
           text-overflow:ellipsis;
           overflow:hidden;
           white-space:nowrap;
         }
         .name {
-          font-size:14px;
+          font-size:0.875rem;
           font-weight:400;
         }
       }
@@ -105,24 +105,24 @@
       .cd {
         .swith-line {
           width:80%;
-          height:1px;
+          height:0.0625rem;
           background-color: #eee;
           margin:0 auto;
           .triger {
             position:absolute;
-            top:-14px;
+            top:-0.875rem;
             left:50%;
-            transform: translate3d(-16px,0,0);
-            width:90px;
-            height:140px;
+            transform: translate3d(-1.0rem,0,0);
+            width:5.625rem;
+            height:8.75rem;
             background-image:url('/static/images/swith.png');
             background-size:cover;
-            transform-origin:14px 16px;
+            transform-origin:0.875rem 1.0rem;
             transition:all 0.3s;
             z-index:5;
           }
           .triger.pause {
-            transform: translate3d(-16px,0,0) rotateZ(-30deg)
+            transform: translate3d(-1.0rem,0,0) rotateZ(-30deg)
           }
         }
 
@@ -131,13 +131,13 @@
           height:44vh;
           position:relative;
           margin: 0 auto;
-          margin-top:70px;
+          margin-top:4.375rem;
           .wrapper {
             width:44vh;
             height:44vh;
             position:relative;
             margin: 0 auto;
-            margin-top:70px;
+            margin-top:4.375rem;
             &.animate {
               animation: goRotate 16s linear infinite 0.1s;
             }
@@ -170,7 +170,7 @@
       .musicDo {
         width:70vw;
         position:absolute;
-        height:40px;
+        height:2.5rem;
         left:50%;
         bottom:0;
         transform:translate3d(-50%,0,0);
@@ -179,12 +179,12 @@
         justify-content:space-around;
         i {
           display:inline-block;
-          width:40px;
-          width:40px;
-          line-height:40px;
+          width:2.5rem;
+          width:2.5rem;
+          line-height:2.5rem;
           text-align:center;
           color: #999;
-          font-size:20px;
+          font-size:1.25rem;
           &:active {
             color: #666;
           }
@@ -208,12 +208,12 @@
         opacity: 0;
       }
       .volume-range {
-        height:30px;
-        line-height:30px;
+        height:1.875rem;
+        line-height:1.875rem;
       }
       .lrc {
         position:relative;
-        height:calc(100% - 30px);
+        height:calc(100% - 1.875rem);
         overflow-y:scroll;
         box-sizing:border-box;
         transition:all 0.3s;
@@ -221,7 +221,7 @@
           padding:50% 0;
           position:relative;
           p {
-            font-size:14px;
+            font-size:0.875rem;
             font-weight:400;
             text-align:center;
             color:rgba(255,255,255,0.5);
@@ -254,17 +254,17 @@
         font-size:0;
         i {
           display:inline-block;
-          font-size:28px;
+          font-size:1.75rem;
           width:20vw;
-          height:50px;
-          line-height:50px;
+          height:3.125rem;
+          line-height:3.125rem;
           text-align:center;
           &.playType,&.menu {
-            font-size:20px;
+            font-size:1.25rem;
             color:#36a765;
           }
           &.playPause {
-            font-size:46px;
+            font-size:2.875rem;
           }
         }
 
