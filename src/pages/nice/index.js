@@ -1,6 +1,6 @@
 /**
- * @file: 首页
- * @author: qinchao@lianjia.com
+ * @file: 优选
+ * @author: yanfangyao01@lianjia.com
  */
 import Vue from 'vue'
 import './style.less'

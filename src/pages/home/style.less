@@ -1,48 +1,47 @@
 .findmusic {
-  position:fixed;
-  background:#fff;
-  overflow:auto;
-  top:3.125rem;
-  bottom:2.875rem;
-  left:0;;
-  right:0;
-  z-index:11;
-  background:#f3f3f3;
-  -webkit-overflow-scrolling:touch;
-  .find-menu {
-    position:fixed;
-    height:2.25rem;
-    width:100%;
-    line-height:2.25rem;
-    background:#fff;
-    overflow:hidden;
-    display:flex;
-    .menu-list {
-      flex: 1;
-      width:25%;
-      overflow:hidden;
-      text-align:center;
-      cursor:pointer;
-      font-size:0.875rem;
-      position:relative;
-      font-weight:500;
-      &.router-link-active {
-        color: #36a765;
-        &:after {
-          content:'';
-          position:absolute;
-          background: #36a765;
-          bottom:0;
-          height:0.125rem;
-          left:0;
-          right:0;
+    // position:fixed;
+    // background: #fff;
+    overflow: auto;
+    // top: 3.125rem;
+    // bottom: 2.875rem;
+    // left: 0;
+    // right: 0;
+    // z-index: 11;
+    // background: #f3f3f3;
+    -webkit-overflow-scrolling: touch;
+    .find-menu {
+        // position: fixed;
+        width: 100%;
+        height: 3.125rem;
+        margin-top: 0.625rem;
+        line-height: 3.125rem;
+        background: #fff;
+        overflow: hidden;
+        display: flex;
+        .menu-list {
+            flex: 1;
+            width: 25%;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            font-weight: 500;
+            &.router-link-active {
+                color: #36a765;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: #36a765;
+                    bottom: 0;
+                    height: 0.125rem;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            &:active {
+                background: $list_active;
+            }
         }
-      }
-      &:active {
-        background:$list_active;
-      }
     }
-
-  }
-
 }

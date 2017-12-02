@@ -1,0 +1,13 @@
+<div class="nice" :style="{}">
+    <ul class="list">
+        <li class="item flex-box" v-for="item in list">
+            <div class="img-wrap">
+                <img :src="item.imgUrl" alt="优选项列表头图" />
+            </div>
+            <div>
+                <div class="title">{{item.title}}</div>
+                <p class="desc">{{item.desc}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

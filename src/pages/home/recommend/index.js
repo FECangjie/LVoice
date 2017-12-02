@@ -13,54 +13,50 @@ import list from 'pages/list'
 
 export default Vue.component('home', {
   data () {
-    return {
-      swiperOption: {  // a轮播图配置项
-        autoplay: 1113000,
-        grabCursor: true,
-        setWrapperSize: true,
-        autoHeight: true,
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        mousewheelControl: true,
-        autoplayDisableOnInteraction: false,
-        observeParents: true,
-        loop: true,
-        onSlideChangeEnd: swiper => {
-          // 这个位置放swiper的回调方法
-          this.page = swiper.realIndex + 1
-          this.index = swiper.realIndex
-        },
-        onClick: swiper => {
-          const index = swiper.activeIndex
-          store.commit({
-            type: 'setMusicList',
-            list: JSON.parse(swiper.slides[index].getAttribute('songlist'))
-          })
-          store.commit({
-            type: 'playIndex',
-            index: 0
-          })
-          store.dispatch({
-            type: 'set_MusicDetail',
-            isShow: true
-          })
-        }
+      return {
+    swiperOption: {
+      autoplay: 1113000,
+      grabCursor: true,
+      setWrapperSize: true,
+      autoHeight: true,
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      mousewheelControl: true,
+      autoplayDisableOnInteraction: false,
+      observeParents: true,
+      loop: true,
+      onSlideChangeEnd: swiper => {
+        // 这个位置放swiper的回调方法
+        this.page = swiper.realIndex + 1
+        this.index = swiper.realIndex
       },
-      swiperIndex: 0
+      onClick: swiper => {
+        const index = swiper.activeIndex
+        store.commit({
+          type: 'setMusicList',
+          list: JSON.parse(swiper.slides[index].getAttribute('songlist'))
+        })
+        store.commit({
+          type: 'playIndex',
+          index: 0
+        })
+        store.dispatch({
+          type: 'set_MusicDetail',
+          isShow: true
+        })
+      }
     }
-  },
-  computed: {
-    reconmmend () {
-      return store.getters.getAllInfo || '暂无数据'
+      }
     },
-    tuijian () {
-      return store.getters.getTuijian || {}
+    computed: {
+      reconmmend () {
+        return store.getters.getAllInfo || '暂无数据'
+      },
+      swiper () {
+        return this.$refs.mySwiper.swiper
+      }
     },
-    swiper () {
-      return this.$refs.mySwiper.swiper
-    }
-  },
-  methods: {
+    methods: {
     showSongSheet (data) {
       store.dispatch({
         type: 'set_MusicSheetList',
@@ -70,31 +66,8 @@ export default Vue.component('home', {
         type: 'setIsShowSongSheet',
         isShow: true
       })
-    },
-    swiperClick(e) { // 轮播图点击播放
-      const index = this.swiperIndex
-      let target = e.target
-      let swiper = $(target).parent()
-      let list = JSON.parse(swiper[0].getAttribute('songlist'))
-      console.log('--------播放详情--------')
-      console.log(list)
-      store.commit({
-        type: 'setMusicList',
-        list: list
-      })
-      store.commit({
-        type: 'playIndex',
-        index: 0
-      })
-      store.dispatch({
-        type: 'set_MusicDetail',
-        isShow: true
-      })
-    },
-    swiperChange(index) { // 轮播图切换
-      this.swiperIndex = index
     }
-  },
+    },
   mounted () {
     // this.$refs.mySwiper.slideTo(0, 1000, false)
   },

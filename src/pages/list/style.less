@@ -1,23 +1,32 @@
 .findsheetlist {
-  display:inline-block;
-  width: 90%;
-  box-sizing:border-box;
+  &:last-child {
+    border-bottom: none;
+  }
+  // display:inline-block;
+  // width: 90%;
+  // box-sizing:border-box;
   height:auto;
   position:relative;
   vertical-align:top;
-  border-bottom: 1px solid #eee;
-  padding: 0.625rem 0.3125rem;
-  margin: 0 5%;
+  border-bottom: 1px solid #e5e5e5;
+  // padding: 0.625rem 0.3125rem;
+  padding: 1rem 0;
+  // margin: 0 5%
   box-sizing: border-box;
   .content {
-    width:33%;
-    height:auto;
+    -webkit-flex: none;
+    flex: none;
+    width: 6.75rem;
+    height: 5.0625rem;
+    // height:auto;
     position:relative;
     display: inline-block;
+    vertical-align: middle;
     .image {
       width:100%;
-      height:0;
-      padding-top:100%;
+      // height:0;
+      // padding-top:100%;
+      height: 100%;
     }
 
     .toprighttips {
@@ -27,12 +36,13 @@
       position:absolute;
       top:0;
       left:0;
-      right:0;
+      // right:0;
       color:#fff;
       font-size:0.75rem;
       font-weight:400;
       text-align:right;
       padding:0 0.25rem;
+      background: rgba(0, 0, 0, 0.3);
       .icon {
         margin-right:0.1875rem;
 
@@ -58,21 +68,41 @@
     }
 
   }
-
-  .title {
-    width: 67%;
-    display: inline-block;
-    height:6.25rem;
-    line-height:1.875rem;
-    margin:0.25rem 0;
-    padding:0 0.625rem;
+  
+  .right {
+    -webkit-flex: auto;
+    flex: auto;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    // width: 67%;
+    width: 100%;
+    // height:6.25rem;
+    height: 5.0625rem;
+    // line-height:1.875rem;
+    line-height:1;
+    // margin:0.25rem 0;
+    padding-left:1.25rem;
     box-sizing:border-box;
     overflow: hidden;
-    color:#333;
-    font-weight:400;
-    text-overflow: ellipsis;
-    font-size:1.0rem;
-    float: left;
-  }
 
+    .title {
+      color:#333;
+      font-weight:400;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size:1.0rem;
+      vertical-align: middle;
+    }
+
+    .footnote {
+      width: 100%;
+      font-size: .75rem;
+      color: #9C9FA1;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+  }
 }

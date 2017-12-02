@@ -1,1 +1,14 @@
-@import "./font-icon/style.css"
+@import "./font-icon/style.css";
+
+body {
+    color: #394043;
+    background: #f5f5f5;
+    padding-top: 3.125rem;
+}
+
+.flex-box {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
