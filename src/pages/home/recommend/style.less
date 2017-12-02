@@ -79,15 +79,17 @@
       justify-content: center;
       align-items: center;
       padding:0 0.625rem;
+      p {
+        color: #666;
+      }
       .icon-type {
         display:inline-block;
-        color:#36a765;
         font-size:2.0rem;
         width:2.5rem;
         height:2.5rem;
         line-height:2.5rem;
         text-align:center;
-        border:1px solid #36a765;
+        border:1px solid #fff;
         border-radius:50%;
       }
 
@@ -102,7 +104,15 @@
         width:100%;
         text-align:center;
       }
-
+    }
+    >:nth-child(1) {
+      color: #36a765;
+    }
+    >:nth-child(2) {
+      color: #FFCC66;
+    }
+    >:nth-child(3) {
+      color: #FF6666;
     }
 
   }

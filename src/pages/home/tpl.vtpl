@@ -9,8 +9,8 @@
 			<router-link class="menu-list" tag="div" to="/lvoice/nice">
 				<div class="menu-list-div">优选</div>
 			</router-link>
-			<router-link class="menu-list" tag="div" to="/lvoice/now">
-				<div class="menu-list-div">直播</div>
+			<router-link class="menu-list" tag="div" to="/lvoice/rank">
+				<div class="menu-list-div">榜单</div>
 			</router-link>
 		</div>
 		<router-view></router-view>

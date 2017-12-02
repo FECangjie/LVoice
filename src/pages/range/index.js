@@ -29,7 +29,7 @@ export default Vue.component('range', {
 		},
 		currentColor: {
 			type: String,
-			default: '#C62F2F'
+			default: '#36a765'
 		},
 		ballWidth: {
 			type: String,
@@ -203,7 +203,8 @@ export default Vue.component('range', {
 		this.$refs.ball.style.height = `${this.ballwidth}px`
 		this.$refs.ball.style.marginTop = `-${this.ballwidth / 2 - 1}px`
 		if (!this.currentcolor.length > 0 || this.type === 'progress') return
-		this.$refs.currentProgress.style.background = this.currentcolor
+    this.$refs.currentProgress.style.background = '#d1eee1'
+    // this.$refs.currentProgress.style.background = this.currentcolor // 颜色过浅
 	},
   template: tpl
 })

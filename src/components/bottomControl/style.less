@@ -18,7 +18,7 @@
     display:flex;
     .music-detail {
       flex:1 1 auto;
-      padding: 0 0.3125rem;
+      padding: 0 0.5rem;
       display:flex;
       flex-direction:column;
       justify-content:space-around;
@@ -70,14 +70,13 @@
 
 
   .playpause {
-    border:2px solid #999;
+    // border:2px solid #999;
     border-radius:50%;
     width:1.5rem;
     height:1.5rem;
     position:relative;
     &:active {
-      background:$list_active;
-
+      background:#f3fafa;
     }
     i {
       display:block;
@@ -85,14 +84,14 @@
       top:50%;
       left:55%;
       transform:translate3d(-50%,-50%,0);
-      width:1.375rem;
-      font-size:0.875rem;
-      color:#333;
+      // width:1.375rem;
+      font-size:1.5rem;
+      color:#36a765;
       text-align:center;
       &.icon-pause {
         left:50%;
         font-size:1.125rem;
-        color:$primarycolor;
+        color:#999;
       }
 
     }
