@@ -10,6 +10,7 @@ import axios from 'axios'
 import store from 'store'
 import range from 'pages/range'
 import list from 'pages/listPage'
+import { MessageBox } from 'mint-ui';
 
 export default Vue.component('volice', {
   data () {
@@ -62,6 +63,11 @@ export default Vue.component('volice', {
       console.log(list)
       store.dispatch('set_Voice',{uuid: list.uuid})
 
+    },
+    showShare() {
+      MessageBox.alert('地址链接：' + location.href, '爱是分享').then(() => {
+
+      })
     }
   },
   computed: {

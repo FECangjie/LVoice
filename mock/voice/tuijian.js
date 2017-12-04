@@ -4,7 +4,7 @@ module.exports = function(path, param, context) {
       "moren_cn": "大话楼市，畅谈与房子有关的大小事！",
       "moren_name": "赵禹光",
       "moren_tupian": "http://10.23.247.62:8081/lvoice/b115c35d-8d93-4c80-9404-b2fb304141d6.jpg",
-        "moren_mp3": "http://10.23.247.62:8081/lvoice/a3232687-b568-43a4-bc9f-3084544c8cc3.m4a",
+        "moren_mp3": "http://dl.stream.qqmusic.qq.com/C4000000P4KV0ylM2w.m4a?vkey=4ED841666C4CC1D448F9572FBE19AFE039C5E33AAAF018E4B64150F5B0686D42F6F2AB34FE126B63659A19D97324EB1E750B8A44964F8E22&guid=9380985704&uin=737033917&fromtag=66",
         "top_list": [{
             "uuid": "1512224322777",
             "user_code": "20338442",

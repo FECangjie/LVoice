@@ -4,6 +4,8 @@
 
     <!-- <router-link tag="i" to="/search"> -->
       <i class="search icon1-search"  @click.stop="showSearch"></i>
+      <span class="logo">家音</span>
+      <span class="right"><i class="icon-heart"></i></span>
     <!-- </router-link> -->
     <!-- <Counter class="counter"></Counter> -->
   </div>

@@ -11,7 +11,7 @@
 					<p class="name">{{getCurrentMusic.pindao_name}}</p>
 					<p class="singer">{{ getCurrentMusic.user_name}}</p>
 				</div>
-				<i class="share icon1-share"></i>
+				<i class="share icon1-share" @click.stop="showShare"></i>
 			</div>
 			<transition name="fade">
 				<div class="content-wrapper" v-show="showCD" @click.stop="isShowCD(false)">
