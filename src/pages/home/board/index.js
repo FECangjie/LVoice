@@ -67,10 +67,10 @@ export default Vue.component('board', {
         }
     },
     created() {
-        let api = 'http://172.30.13.76:12101/voice/rank_list'
+        let api = '/voice/rank_list.json'
         axios.get(api, {}).then((res) => {
             if (res.data) {
-                this.list = res.data.fenlei_list;
+                this.list = res.data.rank_list;
                 console.log(this.list);
             }
         })

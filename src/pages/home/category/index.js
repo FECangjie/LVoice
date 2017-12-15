@@ -17,46 +17,46 @@ export default Vue.component('category', {
         return {
             icon: 'icon',
             list: [{
-                    title: '购房',
+                    title: '中文',
                     subitem: [{
-                            iconName: 'icon-database',
-                            subtitle: '投资置业'
+                            iconName: 'icon-bullhorn',
+                            subtitle: '中国风'
                         },
                         {
                             iconName: 'icon-bullhorn',
-                            subtitle: '刚需必知'
+                            subtitle: '五月天'
                         },
                         {
-                            iconName: 'icon-shield',
-                            subtitle: '换房套路'
+                            iconName: 'icon-bullhorn',
+                            subtitle: '失恋必备'
                         }
                     ]
                 },
                 {
-                    title: '装修',
+                    title: '欧美',
                     subitem: [{
-                            iconName: 'icon-newspaper',
-                            subtitle: '万链专栏'
+                            iconName: 'icon-pacman',
+                            subtitle: '烟卷'
                         },
                         {
                             iconName: 'icon-pacman',
-                            subtitle: '装修大实话'
+                            subtitle: '酷玩'
                         }
                     ]
                 },
                 {
-                    title: '特色',
+                    title: '二次元',
                     subitem: [{
-                            iconName: 'icon-home2',
-                            subtitle: '地产知识'
-                        },
-                        {
-                            iconName: 'icon-office',
-                            subtitle: '楼市快报'
+                            iconName: 'icon-headphones',
+                            subtitle: '颅内xxoo'
                         },
                         {
                             iconName: 'icon-headphones',
-                            subtitle: '马红下班时光'
+                            subtitle: 'x君和o酱'
+                        },
+                        {
+                            iconName: 'icon-headphones',
+                            subtitle: '呀咩爹'
                         }
                     ]
                 }

@@ -6,17 +6,17 @@
 	  </mt-swipe-item>
 	</mt-swipe>
 	<div class="recommend-type">
-		<div class="div-type"  data-type="链家之声" @click="setType">
-			<i class="icon1-type icon1-diantai" data-type="链家之声"></i>
-			<p class="title">链家之声</p>
+		<div class="div-type"  data-type="吃鸡必备" @click="setType">
+			<i class="icon1-type icon1-diantai" data-type="吃鸡必备"></i>
+			<p class="title">吃鸡必备</p>
 		</div>
 		<div class="div-type" data-type="每日推荐" @click="setType">
 			<i class="icon-bullhorn" data-type="每日推荐"></i>
 			<p class="title">每日推荐</p>
 		</div>
-		<div class="div-type" data-type="最热讲师" @click="setType">
-			<i class="icon-users" data-type="最热讲师"></i>
-			<p class="title">最热讲师</p>
+		<div class="div-type" data-type="广场舞排行" @click="setType">
+			<i class="icon-users" data-type="广场舞排行"></i>
+			<p class="title">广场舞排行</p>
 		</div>
 	</div>
 	<div class="recommend-list">

@@ -112,7 +112,7 @@ const store = new Vuex.Store({
             type: 'setKey',
             key: obj.key
           })
-          router.push('/lvoice/nice');
+          router.push('/coco/nice');
         } else {
 
         }
