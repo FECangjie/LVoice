@@ -19,29 +19,29 @@ export const router = new VueRouter({
     routes: [{
             path: '/',
             component: homePage,
-            redirect: '/lvoice/recommend'
+            redirect: '/coco/recommend'
         },
         {
-            path: '/lvoice',
+            path: '/coco',
             component: homePage,
             children: [{
                     path: '',
-                    redirect: '/lvoice/recommend'
+                    redirect: '/coco/recommend'
                 },
                 {
-                    path: '/lvoice/recommend',
+                    path: '/coco/recommend',
                     component: Recommend
                 },
                 {
-                    path: '/lvoice/category',
+                    path: '/coco/category',
                     component: category
                 },
                 {
-                    path: '/lvoice/nice',
+                    path: '/coco/nice',
                     component: nice
                 },
                 {
-                    path: '/lvoice/rank',
+                    path: '/coco/rank',
                     component: board
                 }
             ]
@@ -55,7 +55,7 @@ export const router = new VueRouter({
             component: ErrorPage
         },
         {
-            path: '/lvoice/now',
+            path: '/coco/now',
             component: listPage2
         }
     ]

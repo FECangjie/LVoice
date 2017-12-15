@@ -1,9 +1,9 @@
 <div class="searchwrap">
 	<transition name="sideDown">
 		<div class="search-page" v-show="showSearch">
-			<div class="title"><i class="icon-music"></i>搜音 链你所恋</div>
+			<div class="title"><i class="icon-music"></i>soso 搜音</div>
 			<div class="content">
-				不知道这个做展示用没做什么实际功能其实是没做完的页面会不会影响我们组全体成员矜矜业业熬夜做出来的成绩不管了睡不睡了
+				这个模块还有待开发首先凑够十五个字凑够十五个字凑够十五个字或十五个字以上放下这里才显得丰满没有那么空
 			</div>
 		</div>
 	</transition>

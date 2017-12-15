@@ -53,7 +53,7 @@
 							</div>
 
 							<div class="jianjie">
-								家音简介
+								coco简介
 							</div>
 							<div class="content">
 								{{ getCurrentMusic.jieshao }}
